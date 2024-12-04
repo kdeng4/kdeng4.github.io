@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: repositories
-description: More projects are updating
+description: >
 nav: true
 nav_order: 2
 ---
