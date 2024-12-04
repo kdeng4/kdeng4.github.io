@@ -1,7 +1,7 @@
 github_users:
   - kdeng4
 
-repo_description_lines_max: 2
+repo_description_lines_max: 5
 
 github_repos:
   - kdeng4/AdventOfCode2024
