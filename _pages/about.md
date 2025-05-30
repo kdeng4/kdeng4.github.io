@@ -11,9 +11,24 @@ profile:
   more_info: >
     <p>Toronto ON M5A 4P7<p>
 
+<<<<<<< HEAD
 news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
+=======
+selected_papers: true # includes a list of papers marked as "selected={true}"
+social: true # includes social icons at the bottom of the page
+
+announcements:
+  enabled: true # includes a list of news items
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  limit: 5 # leave blank to include all the news in the `_news` folder
+
+latest_posts:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 3 # leave blank to include all the blog posts
+>>>>>>> 693c3beacb9c284573145884f8306441f75e30aa
 ---
 
 Hello! I am a Master's student in **Computer Science** at [**Georgia Tech**](https://www.gatech.edu/) and a **Data Engineer Analyst** at **Walmart Canada**. I live in downtown Toronto with Roxy - my lovable dog.

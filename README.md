@@ -87,7 +87,6 @@ Feel free to add your own page(s) by sending a PR.
 <a href="https://daviddmc.github.io/" target="_blank">★</a>
 <a href="https://andreaskuster.ch/" target="_blank">★</a>
 <a href="https://ellisbrown.github.io/" target="_blank">★</a>
-<a href="https://noman-bashir.github.io/" target="_blank">★</a>
 <a href="https://djherron.github.io/" target="_blank">★</a>
 <a href="https://rodosingh.github.io/" target="_blank">★</a>
 <a href="https://vdivakar.github.io/" target="_blank">★</a>
@@ -156,10 +155,13 @@ Feel free to add your own page(s) by sending a PR.
 <a href="https://giuseppeperelli.github.io/" target="_blank">★</a>
 <a href="https://shlee-lab.github.io/" target="_blank">★</a>
 <a href="https://devos50.github.io/" target="_blank">★</a>
-<a href="https://kocikowski.com/" target="_blank">★</a>
 <a href="https://vmooers.github.io/" target="_blank">★</a>
 <a href="https://jpfonseca.github.io/" target="_blank">★</a>
 <a href="https://dmitryryumin.github.io/" target="_blank">★</a>
+<a href="https://alexiglad.github.io/" target="_blank">★</a>
+<a href="https://nishanthjkumar.com/" target="_blank">★</a>
+<a href="https://joszuijderwijk.nl/" target="_blank">★</a>
+<a href="https://d-jiao.github.io/" target="_blank">★</a>
 </td>
 </tr>
 <tr>
@@ -221,6 +223,8 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
 
 ## Table Of Contents
 
+<!--ts-->
+
 - [al-folio](#al-folio)
   - [User community](#user-community)
   - [Lighthouse PageSpeed Insights](#lighthouse-pagespeed-insights)
@@ -238,7 +242,7 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
     - [Collections](#collections)
     - [Layouts](#layouts)
       - [The iconic style of Distill](#the-iconic-style-of-distill)
-      - [Full support for math \& code](#full-support-for-math--code)
+      - [Full support for math &amp; code](#full-support-for-math--code)
       - [Photos, Audio, Video and more](#photos-audio-video-and-more)
     - [Other features](#other-features)
       - [GitHub's repositories and user stats](#githubs-repositories-and-user-stats)
@@ -253,6 +257,7 @@ Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.
     - [All Contributors](#all-contributors)
   - [Star History](#star-history)
   - [License](#license)
+  <!--te-->
 
 ## Getting started
 
