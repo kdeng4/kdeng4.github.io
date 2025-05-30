@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Patrick Deng",
-    "label": "Data Engineer Analyst",
+    "label": "Data Analyst, MLOps Engineer",
     "image": "",
     "email": "keqi.deng@outlook.com",
     "phone": "647.514.4114",
     "url": "https://kdeng4.github.io/",
-    "summary": "Data Engineer Analyst, Computer Science Student",
+    "summary": "MLOps Data Engineer, Computer Science Student",
     "location": {
       "address": "",
       "postalCode": "M5A 4P7",
@@ -26,20 +26,18 @@
     {
       "name": "Walmart Canada",
       "location": "Mississauga ON",
-      "position": "Data Engineer Analyst",
+      "position": "MLOps & Data Engineer",
       "url": "http://walmart.ca",
       "startDate": "2024",
       "endDate": "",
       "summary": "Based in Mississauga, Ontario, supported data science, engineering, and analytics functions within a dynamic data engineering team",
       "highlights": [
-        "Collaborated in an agile data engineering team, delivering high-quality work in a fast-paced, project-driven environment.",
-        "Leveraged GCP BigQuery for analyzing database structures and processing large-scale data, optimizing queries to reduce costs.",
-        "Developed SQL and Python functions for data transformation and routine operations, implemented via Airflow to increase efficiency and standardize processes.",
-        "Supported marketing initiatives with customer targeting personas and ad tracking, improving ROI by enhancing data accuracy.",
-        "Executed ETL processes to deliver data for BI dashboards, enabling stakeholders to track key metrics daily.",
-        "Improved data quality and reliability by implementing monitoring systems and optimization techniques.",
-        "Enhanced data pipelines, reducing processing time and costs while delivering timely reports.",
-        "Developed predictive models that supported revenue growth and aligned with business KPIs for strategy and decision-making."
+        "Spearheaded efforts to link web and in-store customer experiences by designing scalable data pipelines in GCP BigQuery, leveraging data modeling, ETL best practices, and SQL to enhance cross-channel marketing strategies and improve customer engagement.",
+        "Automated data transformation workflows using BigQuery SQL, Python, and Airflow, ensuring scalability and efficiency for processing 70M+ daily records, reducing operational time by 30%.",
+        "Partnered with cross-functional teams to conduct deep-dive analyses of large-scale customer data, delivering actionable insights through interactive dashboards and reports, driving data-driven business decision-making.",
+        "Explored and integrated LLMs (GPT, Gemini APIs) into data-driven applications, enabling advanced NLP automation and demonstrating a forward-thinking approach to leveraging AI for pipeline improvements.",
+        "Improved data quality by collaborating with teams to optimize back-end data sources, ensuring accuracy, reliability, and simplicity in reporting workflows.",
+        "Gained hands-on experience with cloud platforms and modern data engineering tools, with transferable skills."
       ]
     },
     {
@@ -51,13 +49,12 @@
       "endDate": "2024",
       "summary": "Specialized in leveraging data visualization, pipeline architecture, and predictive modeling to drive insights for B2C, B2B, and logistics-focused operations.",
       "highlights": [
-        "Designed and deployed an open-source dashboard using Metabase, modernizing data visualization and reducing software licensing costs by 40%.",
-        "Architected a centralized data pipeline on Airflow, hosted by GCP, integrating CRM, ERP, and analytics sources, reducing report generation time and improving data accuracy.",
-        "Developed predictive models using machine learning, Python, SQL, and BigQuery, increasing customer retention with churn prediction and product recommendation systems.",
-        "Created interactive dashboards using Tableau, Looker Studio, and Metabase, enhancing data literacy and enabling faster responses to market trends.",
-        "Designed database systems and user-friendly applications, reducing manual data entry and decreasing data-related errors by automating validation and quality checks.",
-        "Collaborated with cross-functional teams to translate business questions into analytical tasks, optimizing production and inventory management to reduce costs.",
-        "Utilized GCP and Azure for large-scale data management, implementing cloud security best practices and improving budget accuracy with financial analysis models."
+        "Designed and implemented a cloud-based data warehouse using Airflow (GCP) to integrate diverse sources (CRM, ERP, analytics), enabling scalable ETL pipelines and improving reporting accuracy by 25%.",
+        "Developed and maintained interactive dashboards using Tableau, Looker Studio, and Metabase, providing real-time visibility into key performance metrics and actionable insights for stakeholders.",
+        "Built predictive models for customer behavior analysis (e.g., churn prediction, product recommendations), driving business growth by improving customer retention and optimizing product offerings.",
+        "Optimized data mining workflows and financial forecasting processes by leveraging Python, SQL, and advanced analytical tools, reducing manual effort and improving operational efficiency.",
+        "Championed the adoption of cloud technologies (GCP, Azure) and implemented scalable, cost-efficient data solutions, demonstrating strong knowledge in cloud-based infrastructure and its business applications.",
+        "Led the implementation of Metabase as an open-source BI tool, streamlining data accessibility and reducing reliance on costly software solutions."
       ]
     }
   ],
@@ -208,25 +205,11 @@
   ],
   "publications": [
     {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-    },
-    {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "name": "Exploring Transitions of Graduates From an Online Master’s in Computer Science Program to Doctoral Programs",
+      //"publisher": "ACM CompEd '25",
+      "releaseDate": "2025-04-01",
+      "url": "./assets/pdf/OMSCS_to_PhD_CS8903.pdf",
+      "summary": "This study explores how a large online master’s program in computer science prepares graduates for STEM PhD programs. By analyzing enrollment data, surveys, and interviews, the research highlights the program's positive impact on alumni PhD experiences. Key findings include the importance of graduate research and coursework in PhD preparation. The results demonstrate that affordable, online, asynchronous programs can effectively support non-traditional students in pursuing doctoral education. Recommendations are provided for similar programs to enhance research opportunities for PhD-bound students."
     }
   ],
   "languages": [
