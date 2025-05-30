@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: B.Sci., M.Eng., Data Engineer Analyst
+subtitle: B.Sci., M.Eng., MLOps Engineer and Data Analyst
 
 profile:
   align: right
@@ -31,7 +31,7 @@ latest_posts:
 >>>>>>> 693c3beacb9c284573145884f8306441f75e30aa
 ---
 
-Hello! I am a Master's student in **Computer Science** at [**Georgia Tech**](https://www.gatech.edu/) and a **Data Engineer Analyst** at **Walmart Canada**. I live in downtown Toronto with Roxy - my lovable dog.
+Hello! I am a Master's student in **Computer Science** at [**Georgia Tech**](https://www.gatech.edu/) and a **MLOps Engineer** at **Walmart Canada**. I live in downtown Toronto with Roxy - my lovable dog.
 
 I earned my first Master’s degree in **Chemical Engineering** from the **University of Calgary** in 2020. Since then, I have gained over four years of professional experience in the **data** field, focusing on **database architecture**, **data pipeline engineering**, and **data visualization**.
 
