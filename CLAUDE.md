@@ -35,7 +35,7 @@ Prettier is configured with `@shopify/prettier-plugin-liquid` for Liquid templat
 ## Architecture
 
 ### Content model
-- **`_config.yml`** — Master configuration (~711 lines). Defines site metadata, plugin settings, third-party library CDN references with SRI hashes, and collection definitions. **Note:** currently contains unresolved merge conflict markers that need to be cleaned up.
+- **`_config.yml`** — Master configuration. Defines site metadata, plugin settings, third-party library CDN references with SRI hashes, and collection definitions.
 - **`_pages/`** — Static pages (about, blog, cv, publications, projects, teaching, repositories). Each uses YAML front matter to select a layout.
 - **`_posts/`** — Blog posts in Markdown with front matter. Supports math (MathJax), code highlighting (Rouge), Distill-style posts, and embedded media.
 - **`_projects/`** — Project showcase entries.
@@ -45,7 +45,7 @@ Prettier is configured with `@shopify/prettier-plugin-liquid` for Liquid templat
 - **`assets/json/resume.json`** — JSON Resume format, used as an alternative CV data source.
 
 ### Template hierarchy
-- **`_layouts/`** — 14 Liquid layouts. `default.liquid` is the base; others (`page`, `post`, `about`, `cv`, `bib`, `distill`, `book-review`) extend it.
+- **`_layouts/`** — Liquid layouts. `default.liquid` is the base; others (`page`, `post`, `about`, `cv`, `bib`, `distill`, `book-review`) extend it.
 - **`_includes/`** — Reusable Liquid partials (head, header, footer, social links, media embeds). Subdirectories `cv/`, `resume/`, `repository/` group related components.
 - **`_sass/`** — SCSS stylesheets. `_base.scss` has core styles, `_themes.scss` defines color themes. Compiled to compressed CSS.
 

@@ -14,13 +14,7 @@
       "countryCode": "Canada",
       "region": "Ontario"
     },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
-      }
-    ]
+    "profiles": []
   },
   "work": [
     {
@@ -56,18 +50,6 @@
         "Championed the adoption of cloud technologies (GCP, Azure) and implemented scalable, cost-efficient data solutions, demonstrating strong knowledge in cloud-based infrastructure and its business applications.",
         "Led the implementation of Metabase as an open-source BI tool, streamlining data accessibility and reducing reliance on costly software solutions."
       ]
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
     }
   ],
   "education": [
@@ -113,16 +95,6 @@
       "score": "3.8"
     }
   ],
-  "awards": [
-    {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
-
   "skills": [
     {
       "name": "Data",
@@ -147,7 +119,7 @@
       "name": "Tools & Platforms",
       "level": "Advanced",
       "icon": "fa-solid fa-tools",
-      "keywords": ["GCP BigQuery", "GCP Vertax AI", "Airflow", "Git", "Jupyter Notebooks", "SQL", "Python", "Java", "HTML"]
+      "keywords": ["GCP BigQuery", "GCP Vertex AI", "Airflow", "Git", "Jupyter Notebooks", "SQL", "Python", "Java", "HTML"]
     },
     {
       "name": "Business Impact",
@@ -198,18 +170,17 @@
     {
       "name": "Object Oriented Programming in Java",
       "date": "2021",
-      "issuer": "Coursera | Duck University, UC San Diego",
+      "issuer": "Coursera | Duke University, UC San Diego",
       "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/49MSMG92MDMJ",
       "icon": "fa-solid fa-clipboard-check"
     }
   ],
   "publications": [
     {
-      "name": "Exploring Transitions of Graduates From an Online Master’s in Computer Science Program to Doctoral Programs",
-      //"publisher": "ACM CompEd '25",
+      "name": "Exploring Transitions of Graduates From an Online Master's in Computer Science Program to Doctoral Programs",
       "releaseDate": "2025-04-01",
       "url": "./assets/pdf/OMSCS_to_PhD_CS8903.pdf",
-      "summary": "This study explores how a large online master’s program in computer science prepares graduates for STEM PhD programs. By analyzing enrollment data, surveys, and interviews, the research highlights the program's positive impact on alumni PhD experiences. Key findings include the importance of graduate research and coursework in PhD preparation. The results demonstrate that affordable, online, asynchronous programs can effectively support non-traditional students in pursuing doctoral education. Recommendations are provided for similar programs to enhance research opportunities for PhD-bound students."
+      "summary": "This study explores how a large online master's program in computer science prepares graduates for STEM PhD programs. By analyzing enrollment data, surveys, and interviews, the research highlights the program's positive impact on alumni PhD experiences. Key findings include the importance of graduate research and coursework in PhD preparation. The results demonstrate that affordable, online, asynchronous programs can effectively support non-traditional students in pursuing doctoral education. Recommendations are provided for similar programs to enhance research opportunities for PhD-bound students."
     }
   ],
   "languages": [
@@ -251,22 +222,10 @@
       "keywords": ["Reading", "Music"]
     }
   ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    },
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    }
-  ],
   "projects": [
     {
-      "name": "Raven’s Progressive Matrices (RPM) Agent",
-      "summary": "Designed an AI agent to solve Raven’s Progressive Matrices, a human intelligence test, using knowledge-based AI techniques. Achieved 80% accuracy on advanced visual analogy problems.",
+      "name": "Raven's Progressive Matrices (RPM) Agent",
+      "summary": "Designed an AI agent to solve Raven's Progressive Matrices, a human intelligence test, using knowledge-based AI techniques. Achieved 80% accuracy on advanced visual analogy problems.",
       "highlights": [
         "Implemented an AI agent to process visual analogy problems in 2x2 and 3x3 formats",
         "Reflected on human cognition by modeling AI to achieve human-like reasoning"
