@@ -1,10 +1,10 @@
 cv:
   name: Patrick (Keqi) Deng
-  label: MLOps Engineer & Data Analyst
+  label: Data Engineer & MLOps
   email: keqi.deng@outlook.com
   location: Toronto, ON
   image: ""
-  summary: MLOps Data Engineer and Computer Science Student at Georgia Tech
+  summary: Data Engineer building production pipelines and applied ML systems. M.Sc. Computer Science, Georgia Tech.
 
   social_networks:
     - network: GitHub
@@ -16,7 +16,7 @@ cv:
     street:
     city: Toronto
     region: Ontario
-    postalCode: M5A 4P7
+    postalCode:
     countryCode: CA
 
   sections:
@@ -54,42 +54,56 @@ cv:
 
     Experience:
       - company: Walmart Canada
-        position: MLOps & Data Engineer
+        position: Data Engineer, Ads & MarTech
         location: Mississauga ON
         start_date: 2024
         end_date: ""
-        summary: Based in Mississauga, Ontario, supported data science, engineering, and analytics functions within a dynamic data engineering team
+        summary: Own the end-to-end Ads CRM data warehouse on GCP BigQuery, processing 70 M+ records daily to power customer targeting, segmentation, and marketing ROI.
         highlights:
-          - Spearheaded efforts to link web and in-store customer experiences by designing scalable data pipelines in GCP BigQuery
-          - Automated data transformation workflows using BigQuery SQL, Python, and Airflow for processing 70M+ daily records
-          - Explored and integrated LLMs (GPT, Gemini APIs) into data-driven applications
+          - Architected and own the Ads CRM data warehouse in GCP BigQuery, orchestrating ETL pipelines via Airflow that process 70 M+ records daily
+          - Designed a customer segmentation framework using clustering and dimensionality-reduction techniques, improving ad ROI
+          - Built an identity-resolution pipeline linking web and in-store transactions, increasing identifiable customer events by ~2 %
+          - Developed a GenAI agentic tool with LangGraph and LLM APIs (GPT, Gemini) for automated data-quality checks
+          - Conducted statistical analyses (regression, time-series, A/B testing) on large-scale customer datasets
 
       - company: Dane Creek Capital Corp.
         position: Data Engineer
         location: Mississauga ON
         start_date: 2021
         end_date: 2024
-        summary: Specialized in leveraging data visualization, pipeline architecture, and predictive modeling to drive insights for B2C, B2B, and logistics-focused operations.
+        summary: Built the cloud data platform from the ground up for a multi-brand B2C/B2B company, delivering BI dashboards, predictive models, and cost-efficient infrastructure.
         highlights:
-          - Designed and implemented a cloud-based data warehouse using Airflow (GCP)
-          - Developed and maintained interactive dashboards using Tableau, Looker Studio, and Metabase
-          - Built predictive models for customer behavior analysis
+          - Designed a cloud-based data warehouse on GCP with Airflow, integrating CRM, ERP, and analytics sources
+          - Deployed Metabase as the company-wide BI tool, reducing data-tooling licensing costs by ~40 %
+          - Built predictive models for customer behaviour analysis (churn prediction, product recommendations)
+          - Designed a loyalty-program data framework for customer engagement metrics and redemption tracking
+          - Championed adoption of GCP and Azure cloud services for scalable infrastructure
 
     Skills:
-      - name: Data
+      - name: Languages
         level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Data Analysis, Database Architecture, Data Visualization, ETL/EL/ELT Data Pipelines, Big Data Processing, SQL Optimization"
+        icon: fa-solid fa-code
+        keywords: "Python, SQL, R, MATLAB, Java, C#, HTML/CSS"
 
-      - name: Tools & Platforms
+      - name: Data Engineering & Cloud
+        level: Master
+        icon: fa-solid fa-database
+        keywords: "ETL/ELT Pipelines, Airflow, Kafka, GCP (BigQuery, Vertex AI), Azure, Data Modeling"
+
+      - name: Databases & Visualization
         level: Advanced
-        icon: fa-solid fa-tools
-        keywords: "GCP BigQuery, GCP Vertex AI, Airflow, Git, Jupyter Notebooks, SQL, Python, Java, HTML"
+        icon: fa-solid fa-chart-bar
+        keywords: "BigQuery, PostgreSQL, MS SQL Server, MySQL, Cassandra, Tableau, Power BI, Looker, Metabase, Streamlit"
 
       - name: Machine Learning & AI
-        level: Proficient
+        level: Advanced
         icon: fa-solid fa-brain
-        keywords: "Machine Learning Models, NLP, AI Learning Algorithms, Scikit-learn, TensorFlow, PyTorch"
+        keywords: "PyTorch, TensorFlow, Scikit-learn, NLP / Transformers, LLM APIs, Recommendation Systems, Clustering, LangGraph"
+
+      - name: DevOps & Tools
+        level: Proficient
+        icon: fa-solid fa-tools
+        keywords: "Docker, Kubernetes, CI/CD, Git, Jupyter Notebooks"
 
     Languages:
       - name: English
@@ -161,4 +175,4 @@ cv:
         authors:
           - Patrick Deng
         releaseDate: 2025-04-01
-        summary: This study explores how a large online master's program in computer science prepares graduates for STEM PhD programs.
+        summary: "Accepted at ACM CompEd '25. Analyzes how Georgia Tech's OMSCS program prepares graduates for STEM PhD programs."

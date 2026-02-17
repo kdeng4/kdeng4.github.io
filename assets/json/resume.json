@@ -1,15 +1,15 @@
 {
   "basics": {
     "name": "Patrick Deng",
-    "label": "Data Analyst, MLOps Engineer",
+    "label": "Data Engineer & MLOps",
     "image": "",
     "email": "keqi.deng@outlook.com",
     "phone": "647.514.4114",
     "url": "https://kdeng4.github.io/",
-    "summary": "MLOps Data Engineer, Computer Science Student",
+    "summary": "Data Engineer building production pipelines and applied ML systems. M.Sc. Computer Science, Georgia Tech.",
     "location": {
       "address": "",
-      "postalCode": "M5A 4P7",
+      "postalCode": "",
       "city": "Toronto",
       "countryCode": "Canada",
       "region": "Ontario"
@@ -20,18 +20,18 @@
     {
       "name": "Walmart Canada",
       "location": "Mississauga ON",
-      "position": "MLOps & Data Engineer",
-      "url": "http://walmart.ca",
+      "position": "Data Engineer, Ads & MarTech",
+      "url": "https://www.walmart.ca",
       "startDate": "2024",
       "endDate": "",
-      "summary": "Based in Mississauga, Ontario, supported data science, engineering, and analytics functions within a dynamic data engineering team",
+      "summary": "Own the end-to-end Ads CRM data warehouse on GCP BigQuery, processing 70 M+ records daily to power customer targeting, segmentation, and marketing ROI.",
       "highlights": [
-        "Spearheaded efforts to link web and in-store customer experiences by designing scalable data pipelines in GCP BigQuery, leveraging data modeling, ETL best practices, and SQL to enhance cross-channel marketing strategies and improve customer engagement.",
-        "Automated data transformation workflows using BigQuery SQL, Python, and Airflow, ensuring scalability and efficiency for processing 70M+ daily records, reducing operational time by 30%.",
-        "Partnered with cross-functional teams to conduct deep-dive analyses of large-scale customer data, delivering actionable insights through interactive dashboards and reports, driving data-driven business decision-making.",
-        "Explored and integrated LLMs (GPT, Gemini APIs) into data-driven applications, enabling advanced NLP automation and demonstrating a forward-thinking approach to leveraging AI for pipeline improvements.",
-        "Improved data quality by collaborating with teams to optimize back-end data sources, ensuring accuracy, reliability, and simplicity in reporting workflows.",
-        "Gained hands-on experience with cloud platforms and modern data engineering tools, with transferable skills."
+        "Architected and own the Ads CRM data warehouse in GCP BigQuery, orchestrating ETL pipelines via Airflow that process 70 M+ records daily and serve as the single source of truth for customer targeting.",
+        "Designed a customer segmentation framework using clustering and dimensionality-reduction techniques, enabling marketing to launch precision campaigns that measurably improved ad ROI.",
+        "Built an identity-resolution pipeline linking web and in-store transactions, increasing identifiable customer events by ~2 % and strengthening cross-channel attribution.",
+        "Developed a GenAI agentic tool with LangGraph and LLM APIs (GPT, Gemini) that automates data-quality checks and ad-hoc analysis, reducing manual investigation time.",
+        "Conducted statistical analyses (regression, time-series, A/B testing) on large-scale customer datasets, delivering actionable insights to product and marketing stakeholders.",
+        "Partnered with data-science and analytics teams to optimize back-end data sources, improving accuracy and simplicity of downstream reporting workflows."
       ]
     },
     {
@@ -41,14 +41,14 @@
       "url": "https://www.linkedin.com/company/dane-creek-capital-corp./posts/?feedView=all",
       "startDate": "2021",
       "endDate": "2024",
-      "summary": "Specialized in leveraging data visualization, pipeline architecture, and predictive modeling to drive insights for B2C, B2B, and logistics-focused operations.",
+      "summary": "Built the cloud data platform from the ground up for a multi-brand B2C/B2B company, delivering BI dashboards, predictive models, and cost-efficient infrastructure.",
       "highlights": [
-        "Designed and implemented a cloud-based data warehouse using Airflow (GCP) to integrate diverse sources (CRM, ERP, analytics), enabling scalable ETL pipelines and improving reporting accuracy by 25%.",
-        "Developed and maintained interactive dashboards using Tableau, Looker Studio, and Metabase, providing real-time visibility into key performance metrics and actionable insights for stakeholders.",
-        "Built predictive models for customer behavior analysis (e.g., churn prediction, product recommendations), driving business growth by improving customer retention and optimizing product offerings.",
-        "Optimized data mining workflows and financial forecasting processes by leveraging Python, SQL, and advanced analytical tools, reducing manual effort and improving operational efficiency.",
-        "Championed the adoption of cloud technologies (GCP, Azure) and implemented scalable, cost-efficient data solutions, demonstrating strong knowledge in cloud-based infrastructure and its business applications.",
-        "Led the implementation of Metabase as an open-source BI tool, streamlining data accessibility and reducing reliance on costly software solutions."
+        "Designed and implemented a cloud-based data warehouse on GCP with Airflow, integrating CRM, ERP, and analytics sources into scalable ETL pipelines that improved reporting accuracy by 25 %.",
+        "Deployed Metabase as the company-wide BI tool, replacing costly legacy software and reducing data-tooling licensing costs by ~40 %.",
+        "Built predictive models for customer behaviour analysis (churn prediction, product recommendations) that improved retention rates and informed product-offering decisions.",
+        "Designed a loyalty-program data framework, structuring customer engagement metrics and redemption tracking to support strategic marketing initiatives.",
+        "Optimized financial forecasting workflows with Python, SQL, and analytical tools, reducing manual effort and improving operational efficiency across the finance team.",
+        "Championed adoption of GCP and Azure cloud services, establishing cost-efficient, scalable infrastructure for the growing data team."
       ]
     }
   ],
@@ -60,7 +60,7 @@
       "area": "Computer Science - Interactive Intelligence",
       "studyType": "Master of Science",
       "startDate": "2022",
-      "endDate": "",
+      "endDate": "2025",
       "score": "3.9",
       "courses": [
         "Artificial Intelligence",
@@ -97,59 +97,34 @@
   ],
   "skills": [
     {
-      "name": "Data",
+      "name": "Languages",
       "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Data Analysis",
-        "Database Architecture",
-        "Data Visualization",
-        "ETL, EL, ELT Data Pipelines",
-        "Big Data Processing",
-        "Data Standardization",
-        "Data Quality Monitoring",
-        "SQL Optimization",
-        "Data Pipeline Optimization",
-        "Business Intelligence Dashboards",
-        "Predictive Analytics",
-        "Data-driven KPIs"
-      ]
+      "icon": "fa-solid fa-code",
+      "keywords": ["Python", "SQL", "R", "MATLAB", "Java", "C#", "HTML/CSS"]
     },
     {
-      "name": "Tools & Platforms",
+      "name": "Data Engineering & Cloud",
+      "level": "Master",
+      "icon": "fa-solid fa-database",
+      "keywords": ["ETL/ELT Pipelines", "Airflow", "Kafka", "GCP (BigQuery, Vertex AI)", "Azure", "Data Modeling", "Data Quality Monitoring"]
+    },
+    {
+      "name": "Databases & Visualization",
       "level": "Advanced",
-      "icon": "fa-solid fa-tools",
-      "keywords": ["GCP BigQuery", "GCP Vertex AI", "Airflow", "Git", "Jupyter Notebooks", "SQL", "Python", "Java", "HTML"]
-    },
-    {
-      "name": "Business Impact",
-      "level": "Experienced",
-      "icon": "fa-solid fa-chart-line",
-      "keywords": [
-        "Ad ROI Improvement",
-        "Customer Targeting Personas",
-        "Marketing Analytics",
-        "Revenue Optimization",
-        "Cost Reduction",
-        "M&A Data Strategy"
-      ]
+      "icon": "fa-solid fa-chart-bar",
+      "keywords": ["BigQuery", "PostgreSQL", "MS SQL Server", "MySQL", "Cassandra", "Tableau", "Power BI", "Looker", "Metabase", "Streamlit"]
     },
     {
       "name": "Machine Learning & AI",
-      "level": "Proficient",
+      "level": "Advanced",
       "icon": "fa-solid fa-brain",
-      "keywords": [
-        "Machine Learning Models",
-        "Natural Language Processing",
-        "AI Learning Algorithms",
-        "Supervised and Unsupervised Learning",
-        "Feature Engineering",
-        "Model Deployment",
-        "Predictive Modeling",
-        "Scikit-learn",
-        "TensorFlow",
-        "PyTorch"
-      ]
+      "keywords": ["PyTorch", "TensorFlow", "Scikit-learn", "NLP / Transformers", "LLM APIs (GPT, Gemini)", "Recommendation Systems", "Clustering", "LangGraph"]
+    },
+    {
+      "name": "DevOps & Tools",
+      "level": "Proficient",
+      "icon": "fa-solid fa-tools",
+      "keywords": ["Docker", "Kubernetes", "CI/CD", "Git", "Jupyter Notebooks"]
     }
   ],
   "certificates": [
@@ -178,9 +153,10 @@
   "publications": [
     {
       "name": "Exploring Transitions of Graduates From an Online Master's in Computer Science Program to Doctoral Programs",
+      "publisher": "ACM CompEd 2025",
       "releaseDate": "2025-04-01",
       "url": "./assets/pdf/OMSCS_to_PhD_CS8903.pdf",
-      "summary": "This study explores how a large online master's program in computer science prepares graduates for STEM PhD programs. By analyzing enrollment data, surveys, and interviews, the research highlights the program's positive impact on alumni PhD experiences. Key findings include the importance of graduate research and coursework in PhD preparation. The results demonstrate that affordable, online, asynchronous programs can effectively support non-traditional students in pursuing doctoral education. Recommendations are provided for similar programs to enhance research opportunities for PhD-bound students."
+      "summary": "Accepted at ACM CompEd '25. Analyzes how Georgia Tech's OMSCS program prepares graduates for STEM PhD programs through enrollment data, surveys, and interviews. Demonstrates that affordable, asynchronous online programs can effectively support non-traditional students pursuing doctoral education."
     }
   ],
   "languages": [
