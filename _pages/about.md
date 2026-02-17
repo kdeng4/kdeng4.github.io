@@ -2,33 +2,29 @@
 layout: about
 title: about
 permalink: /
-subtitle: B.Sci., M.Eng., MLOps Engineer and Data Analyst
+subtitle: Data Engineer & MLOps | M.Sc. Computer Science, Georgia Tech
 
 profile:
   align: right
   image: person.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Toronto ON M5A 4P7<p>
+    <p>Toronto, ON</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: false # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false
+  scrollable: true
+  limit: 5
 
 latest_posts:
   enabled: false
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  scrollable: true
+  limit: 3
 ---
 
-Hello! I am a Master's student in **Computer Science** at [**Georgia Tech**](https://www.gatech.edu/) and a **MLOps Engineer** at **Walmart Canada**. I live in downtown Toronto with Roxy - my lovable dog.
+I build production data pipelines and applied ML systems at **[Walmart Canada](https://www.walmart.ca/)**, where I own the end-to-end Ads CRM data warehouse processing **70 M+ records daily** and ship models that directly improve customer targeting and marketing ROI. When I'm not writing SQL or wrangling Airflow DAGs, I'm probably out on a trail with **Roxy** (my dog) or planning the next ski trip.
 
-I earned my first Master's degree in **Chemical Engineering** from the **University of Calgary** in 2020. Since then, I have gained over four years of professional experience in the **data** field, focusing on **database architecture**, **data pipeline engineering**, and **data visualization**.
-
-Over the past year, through work and academic opportunities, I have cultivated a strong interest in emerging technologies, exploring areas such as **AI learning algorithms**, **machine learning applications**, and **natural language processing**. In 2022, I embarked on my second Master's program at the **Georgia Institute of Technology**, with an anticipated graduation in 2025.
-
-I am fluent in both **English** and **Mandarin Chinese**.
+I hold an **M.Sc. in Computer Science** from [**Georgia Tech**](https://www.gatech.edu/) (OMSCS, 2025) with coursework spanning AI, NLP, and database systems, plus an **M.Eng. in Chemical Engineering** from the [**University of Calgary**](https://www.ucalgary.ca/) (2020). That cross-disciplinary background — engineering fundamentals first, then four-plus years of hands-on data work, then a rigorous CS degree — means I approach problems with both analytical depth and practical urgency. I've designed customer segmentation frameworks, built GenAI agentic tools with LangGraph, deployed recommendation systems using collaborative filtering, and reduced pipeline costs through monitoring and optimisation. I'm fluent in **English** and **Mandarin Chinese**.

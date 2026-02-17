@@ -8,10 +8,10 @@ middle_name:
 last_name: Deng
 email: keqi.deng@outlook.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Patrick's personal portfolio. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Patrick Deng — Data Engineer, MLOps practitioner, and M.Sc. CS (Georgia Tech). Building production data pipelines and applied ML systems in Toronto.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-keywords: jekyll, patrick-deng, data-engineer, data-analyst, portfolio-website # add your own keywords or leave empty
+keywords: patrick deng, data engineer, mlops, machine learning, data pipelines, bigquery, airflow, python, genai, toronto, georgia tech, applied ml
 lang: en-ca # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
