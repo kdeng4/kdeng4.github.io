@@ -140,29 +140,6 @@
       "keywords": ["Docker", "Kubernetes", "CI/CD", "Git", "Jupyter Notebooks"]
     }
   ],
-  "certificates": [
-    {
-      "name": "Python for Data Analysis and Visualization",
-      "date": "2021",
-      "issuer": "Udemy",
-      "url": "https://ude.my/UC-d4498ddc-48d8-421a-bded-2c2fd434fd29/",
-      "icon": "fa-solid fa-clipboard-check"
-    },
-    {
-      "name": "Data Analytics with Google",
-      "date": "2021",
-      "issuer": "Coursera | Google Inc.",
-      "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/EHP7Y6BHBQVD",
-      "icon": "fa-solid fa-clipboard-check"
-    },
-    {
-      "name": "Object Oriented Programming in Java",
-      "date": "2021",
-      "issuer": "Coursera | Duke University, UC San Diego",
-      "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/49MSMG92MDMJ",
-      "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
   "publications": [
     {
       "name": "Exploring Transitions of Graduates From an Online Master's in Computer Science Program to Doctoral Programs",
