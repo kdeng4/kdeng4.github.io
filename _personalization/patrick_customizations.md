@@ -5,7 +5,7 @@ Use this to re-apply personalizations after syncing the fork with upstream.
 
 ---
 
-## _config.yml Overrides
+## \_config.yml Overrides
 
 These are the values that differ from upstream al-folio defaults.
 
@@ -50,7 +50,7 @@ serve_og_meta: false
 serve_schema_org: false
 ```
 
-### Social Integration (now in _data/socials.yml)
+### Social Integration (now in \_data/socials.yml)
 
 ```yaml
 # _data/socials.yml
@@ -128,7 +128,7 @@ enable_progressbar: true
 
 ---
 
-## _pages/about.md
+## \_pages/about.md
 
 ```yaml
 ---
@@ -161,7 +161,7 @@ Bio text (two paragraphs):
 
 ---
 
-## _pages/cv.md
+## \_pages/cv.md
 
 ```yaml
 ---
@@ -180,9 +180,10 @@ toc:
 
 ---
 
-## _data/cv.yml
+## \_data/cv.yml
 
 Full rendercv-format CV with Patrick's data. Key sections:
+
 - **Education**: Georgia Tech MS CS (2022–2025, 3.9), UCalgary MEng ChemEng (2018–2020), UCalgary/SWPU BSc (2014–2018)
 - **Experience**: Walmart Canada (Data Engineer, Ads & MarTech, 2024–present), Dane Creek (Data Engineer, 2021–2024)
 - **Skills**: Languages, Data Engineering & Cloud, Databases & Visualization, ML & AI, DevOps & Tools
@@ -197,6 +198,7 @@ Full rendercv-format CV with Patrick's data. Key sections:
 ## assets/json/resume.json
 
 Full JSONResume-format file. Key sections:
+
 - **basics**: Patrick Deng, Data Engineer & MLOps, Toronto ON
 - **work**: Walmart Canada (Data Engineer, Ads & MarTech, 2024–present), Dane Creek (Data Engineer, 2021–2024)
 - **education**: Georgia Tech MS CS (2022–2025, 3.9), UCalgary MEng (2018–2020), UCalgary/SWPU BSc (2014–2018)
@@ -209,7 +211,7 @@ Full JSONResume-format file. Key sections:
 
 ---
 
-## _bibliography/papers.bib
+## \_bibliography/papers.bib
 
 Single entry — Patrick's actual publication (replaces all Einstein placeholders):
 
@@ -226,7 +228,7 @@ Single entry — Patrick's actual publication (replaces all Einstein placeholder
 
 ---
 
-## _data/repositories.yml
+## \_data/repositories.yml
 
 ```yaml
 github_users:
@@ -244,20 +246,20 @@ github_repos:
 
 These are Patrick's own content files (not overwritten by upstream sync):
 
-| File | Description |
-|------|-------------|
-| `_projects/Master to PhD Pathway Study.md` | Academic project page (importance: 1) |
-| `_projects/rpm_agent.md` | RPM Agent project page (importance: 2) |
-| `_projects/asl_recognition.md` | ASL Recognition project page (importance: 3) |
-| `_projects/job_tracker.md` | Job Tracker project page (importance: 4) |
-| `_books/the_godfather.md` | Book review (5 stars, read Aug-Sep 2024) |
-| `_posts/2024-12-04-photo-gallery.md` | Photo gallery blog post |
-| `_posts/2025-03-26-plotly.md` | Plotly visualization post |
-| `assets/json/resume.json` | Full JSON resume |
-| `assets/pdf/resume.pdf` | Resume PDF (binary) |
-| `assets/pdf/OMSCS_to_PhD_CS8903.pdf` | Publication PDF |
-| `assets/img/person.jpg` | Profile photo (binary) |
-| `assets/img/book_covers/the_godfather.jpg` | Book cover image (binary) |
+| File                                       | Description                                  |
+| ------------------------------------------ | -------------------------------------------- |
+| `_projects/Master to PhD Pathway Study.md` | Academic project page (importance: 1)        |
+| `_projects/rpm_agent.md`                   | RPM Agent project page (importance: 2)       |
+| `_projects/asl_recognition.md`             | ASL Recognition project page (importance: 3) |
+| `_projects/job_tracker.md`                 | Job Tracker project page (importance: 4)     |
+| `_books/the_godfather.md`                  | Book review (5 stars, read Aug-Sep 2024)     |
+| `_posts/2024-12-04-photo-gallery.md`       | Photo gallery blog post                      |
+| `_posts/2025-03-26-plotly.md`              | Plotly visualization post                    |
+| `assets/json/resume.json`                  | Full JSON resume                             |
+| `assets/pdf/resume.pdf`                    | Resume PDF (binary)                          |
+| `assets/pdf/OMSCS_to_PhD_CS8903.pdf`       | Publication PDF                              |
+| `assets/img/person.jpg`                    | Profile photo (binary)                       |
+| `assets/img/book_covers/the_godfather.jpg` | Book cover image (binary)                    |
 
 ---
 

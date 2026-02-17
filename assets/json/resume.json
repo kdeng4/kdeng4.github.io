@@ -118,7 +118,16 @@
       "name": "Machine Learning & AI",
       "level": "Advanced",
       "icon": "fa-solid fa-brain",
-      "keywords": ["PyTorch", "TensorFlow", "Scikit-learn", "NLP / Transformers", "LLM APIs (GPT, Gemini)", "Recommendation Systems", "Clustering", "LangGraph"]
+      "keywords": [
+        "PyTorch",
+        "TensorFlow",
+        "Scikit-learn",
+        "NLP / Transformers",
+        "LLM APIs (GPT, Gemini)",
+        "Recommendation Systems",
+        "Clustering",
+        "LangGraph"
+      ]
     },
     {
       "name": "DevOps & Tools",
