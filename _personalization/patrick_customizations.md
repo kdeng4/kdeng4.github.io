@@ -252,11 +252,7 @@ These are Patrick's own content files (not overwritten by upstream sync):
 
 ---
 
-## Files That Need Merge Conflict Resolution
+## Notes
 
-After syncing the fork, these files currently have `<<<<<<< HEAD` / `>>>>>>> 693c3be...` merge conflict markers:
-
-1. **_config.yml** — conflicts in: site settings (name/email), layout (search toggles), social integration block, collections block
-2. **_pages/about.md** — conflict in: front matter (news/selected_papers/social flags, announcements/latest_posts blocks)
-
-Always pick the **HEAD** (Patrick's) side for personalized values.
+All merge conflicts have been resolved as of Feb 2026. After future fork syncs,
+always pick the **HEAD** (Patrick's) side for personalized values in the files listed above.

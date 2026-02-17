@@ -35,7 +35,7 @@ Prettier is configured with `@shopify/prettier-plugin-liquid` for Liquid templat
 ## Architecture
 
 ### Content model
-- **`_config.yml`** — Master configuration. Defines site metadata, plugin settings, third-party library CDN references with SRI hashes, and collection definitions.
+- **`_config.yml`** — Master configuration. Defines site metadata, plugin settings, third-party library CDN references with SRI hashes, and collection definitions. Social media info is now in `_data/socials.yml` (managed by `jekyll-socials` plugin).
 - **`_pages/`** — Static pages (about, blog, cv, publications, projects, teaching, repositories). Each uses YAML front matter to select a layout.
 - **`_posts/`** — Blog posts in Markdown with front matter. Supports math (MathJax), code highlighting (Rouge), Distill-style posts, and embedded media.
 - **`_projects/`** — Project showcase entries.
