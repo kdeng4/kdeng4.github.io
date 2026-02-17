@@ -5,7 +5,7 @@ description: Research study exploring how Georgia Tech's OMSCS program prepares 
 img:
 importance: 1
 category: academic
-related_publications: true
+related_publications: false
 ---
 
 This study explores how a large online master's program in computer science prepares graduates for STEM PhD programs. By analyzing enrollment data, surveys, and interviews, the research highlights the program's positive impact on alumni PhD experiences.
@@ -24,7 +24,3 @@ _Patrick Deng, Alexander D. Greenhalgh, Brian Yu, Nicholas Lytle, David A. Joyne
 - Graduate research experience and rigorous coursework are the strongest predictors of PhD readiness
 - Affordable, asynchronous online programs can effectively support non-traditional students pursuing doctoral education
 - Recommendations are provided for similar programs to enhance research opportunities for PhD-bound students
-
-### ORCID
-
-[0009-0008-9727-9269](https://orcid.org/0009-0008-9727-9269)
