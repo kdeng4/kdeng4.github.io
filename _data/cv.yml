@@ -57,7 +57,7 @@ cv:
         position: Data Engineer (MLOps)
         location: Mississauga ON
         start_date: 2024
-        end_date: ""
+        end_date: present
         summary: Own the end-to-end Ads CRM data warehouse on GCP BigQuery, processing 70 M+ records daily to power customer targeting, segmentation, and marketing ROI.
         highlights:
           - Architected and own the Ads CRM data warehouse in GCP BigQuery, orchestrating ETL pipelines via Airflow that process 70 M+ records daily
@@ -129,22 +129,6 @@ cv:
       - name: Creative Pursuits
         icon: fa-solid fa-palette
         keywords: "Reading, Music"
-
-    Certificates:
-      - name: Python for Data Analysis and Visualization
-        date: 2021
-        issuer: Udemy
-        icon: fa-solid fa-clipboard-check
-
-      - name: Data Analytics with Google
-        date: 2021
-        issuer: Coursera | Google Inc.
-        icon: fa-solid fa-clipboard-check
-
-      - name: Object Oriented Programming in Java
-        date: 2021
-        issuer: Coursera | Duke University, UC San Diego
-        icon: fa-solid fa-clipboard-check
 
     Projects:
       - name: Raven's Progressive Matrices (RPM) Agent
