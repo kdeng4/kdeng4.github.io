@@ -8,19 +8,23 @@
     "url": "https://kdeng4.github.io/",
     "summary": "Data Engineer building production pipelines and applied ML systems. M.Sc. Computer Science, Georgia Tech.",
     "location": {
-      "address": "",
-      "postalCode": "",
       "city": "Toronto",
       "countryCode": "Canada",
       "region": "Ontario"
     },
-    "profiles": []
+    "profiles": [
+      {
+        "network": "ORCID",
+        "username": "0009-0008-9727-9269",
+        "url": "https://orcid.org/0009-0008-9727-9269"
+      }
+    ]
   },
   "work": [
     {
       "name": "Walmart Canada",
       "location": "Mississauga ON",
-      "position": "Data Engineer, Ads & MarTech",
+      "position": "Data Engineer (MLOps)",
       "url": "https://www.walmart.ca",
       "startDate": "2024",
       "endDate": "",
@@ -162,10 +166,10 @@
   "publications": [
     {
       "name": "Exploring Transitions of Graduates From an Online Master's in Computer Science Program to Doctoral Programs",
-      "publisher": "ACM CompEd 2025",
-      "releaseDate": "2025-04-01",
-      "url": "",
-      "summary": "Accepted at ACM CompEd '25. Analyzes how Georgia Tech's OMSCS program prepares graduates for STEM PhD programs through enrollment data, surveys, and interviews. Demonstrates that affordable, asynchronous online programs can effectively support non-traditional students pursuing doctoral education."
+      "publisher": "SIGCSE 2026",
+      "releaseDate": "2026",
+      "url": "https://dl.acm.org/doi/10.1145/3770762.3772654",
+      "summary": "Presented at SIGCSE 2026. Analyzes how Georgia Tech's OMSCS program prepares graduates for STEM PhD programs through enrollment data, surveys, and interviews. Demonstrates that affordable, asynchronous online programs can effectively support non-traditional students pursuing doctoral education."
     }
   ],
   "languages": [

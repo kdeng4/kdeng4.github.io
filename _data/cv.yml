@@ -54,7 +54,7 @@ cv:
 
     Experience:
       - company: Walmart Canada
-        position: Data Engineer, Ads & MarTech
+        position: Data Engineer (MLOps)
         location: Mississauga ON
         start_date: 2024
         end_date: ""
@@ -174,5 +174,10 @@ cv:
       - title: Exploring Transitions of Graduates From an Online Master's in CS to Doctoral Programs
         authors:
           - Patrick Deng
-        releaseDate: 2025-04-01
-        summary: "Accepted at ACM CompEd '25. Analyzes how Georgia Tech's OMSCS program prepares graduates for STEM PhD programs."
+          - Alexander D. Greenhalgh
+          - Brian Yu
+          - Nicholas Lytle
+          - David A. Joyner
+        releaseDate: 2026
+        url: https://dl.acm.org/doi/10.1145/3770762.3772654
+        summary: "Presented at SIGCSE 2026. Analyzes how Georgia Tech's OMSCS program prepares graduates for STEM PhD programs."
