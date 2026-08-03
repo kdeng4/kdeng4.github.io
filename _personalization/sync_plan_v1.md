@@ -1,6 +1,31 @@
 # Fork Sync Plan — al-folio v1.x Migration
 
-Prepared 2026-08-03. Read this **before** running any merge against upstream.
+Prepared 2026-08-03. **Executed 2026-08-03** on branch `sync/al-folio-v1`.
+
+## Outcome
+
+The migration is done. What actually happened, versus what this plan predicted:
+
+- **A normal `git merge upstream/main` worked.** Only 8 conflicts, and git auto-merged
+  all 198 upstream deletions correctly because we had not modified those files. The
+  "rebuild from the starter" procedure below was not needed — keep it as fallback.
+- **The theme-colour risk did not materialise.** `al_folio_core` 1.0.15 ships
+  `_sass/_variables.scss` and `_themes.scss` byte-identical to the pre-v1 versions, so
+  our overrides are those files plus the colour changes and nothing else. Both are
+  acknowledged in `.al-folio-overrides.yml`.
+- **`deploy.yml` auto-merged**, keeping our Pages-artifact deployment _and_ picking up
+  upstream's new Node/`npm ci` step.
+- **Purgecss stays** — upstream still runs it in v1 and updated the safelist for
+  Tailwind-era classes. Trap 4 below is resolved, not outstanding.
+- **The style contract did fail** exactly as predicted (trap 3). Resolved by removing
+  the starter-only CI: `unit-tests.yml`, `visual-regression.yml`, `release.yml`,
+  `star-history.yml`, `update-screenshots.yml`, and the `test/` harness.
+- `bundle exec al-folio upgrade audit`: **0 blocking**, 2 non-blocking (both false-positive
+  jQuery hits on TikZ math inside the kept demo Distill post).
+
+Everything below is the original plan, kept for the next sync.
+
+---
 
 ## TL;DR
 
@@ -195,7 +220,7 @@ docker compose up   # http://localhost:8080
 - [ ] Navy theme in light mode, teal-on-sand in dark mode
 - [ ] Navbar shows only CV and projects, in that order
 - [ ] CV page renders from `assets/json/resume.json` (jsonresume format), PDF link works
-- [ ] Publications page shows only the CompEd '25 entry, no Einstein
+- [x] Publications page shows only the SIGCSE 2026 entry, no Einstein
 - [ ] No demo projects, posts, or announcements
 - [ ] Google Analytics tag present in built HTML
 - [ ] `npx prettier . --check` passes

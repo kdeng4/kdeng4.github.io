@@ -70,11 +70,14 @@ rss_icon: true
 
 ### Analytics & Verification
 
+Restructured by the v1 migration — analytics is now a nested block owned by `al_analytics`,
+and the `enable_*_analytics` flags are gone (a non-empty ID is what enables a provider):
+
 ```yaml
-google_analytics: G-ML0SG7R2BY
+analytics:
+  google: G-ML0SG7R2BY
 google_site_verification: yU2mMf1BswMr-KldkIrf9O9wcWai96gS0icTiOR84Wo
-enable_google_analytics: true
-enable_google_verification: true
+enable_google_verification: true # still a flag
 ```
 
 ### Blog
@@ -120,7 +123,6 @@ scholar:
 ### Optional Features (non-default values)
 
 ```yaml
-enable_google_analytics: true
 enable_google_verification: true
 enable_masonry: true
 enable_math: true
@@ -301,7 +303,7 @@ Full rendercv-format CV with Patrick's data. Key sections:
 - **Interests**: Outdoor Activities, Creative Pursuits
 - **Certificates**: Python (Udemy), Google Data Analytics (Coursera), OOP in Java (Coursera)
 - **Projects**: RPM Agent, ASL Recognition, Job Tracker
-- **Publications**: ACM CompEd '25 paper on OMSCS-to-PhD transitions
+- **Publications**: ACM SIGCSE 2026 paper on OMSCS-to-PhD transitions
 
 ---
 
@@ -314,7 +316,7 @@ Full JSONResume-format file. Key sections:
 - **education**: Georgia Tech MS CS (2022–2025, 3.9), UCalgary MEng (2018–2020), UCalgary/SWPU BSc (2014–2018)
 - **skills**: Languages (Python, SQL, R, MATLAB, Java, C#), Data Engineering & Cloud, Databases & Visualization, ML & AI, DevOps & Tools
 - **certificates**: 3 certificates (Udemy, Coursera)
-- **publications**: ACM CompEd '25 paper
+- **publications**: ACM SIGCSE 2026 paper
 - **projects**: RPM Agent, ASL Recognition with HMMs, Job Application Timeline Tracker
 - **languages**: English, Mandarin, Sichuanese, Japanese (beginner), French (beginner)
 - **interests**: Outdoor Activities (Skiing, Hiking), Creative Pursuits (Reading, Music)
@@ -326,13 +328,17 @@ Full JSONResume-format file. Key sections:
 Single entry — Patrick's actual publication (replaces all Einstein placeholders):
 
 ```bibtex
-@inproceedings{deng2025omscs,
-  title     = {Exploring Transitions of Graduates From an Online Master's in CS to Doctoral Programs},
-  author    = {Deng, Patrick},
-  year      = {2025},
-  booktitle = {Proceedings of the ACM Conference on Global Computing Education (CompEd '25)},
-  publisher = {ACM},
-  selected  = {true}
+@inproceedings{deng2026sigcse,
+  bibtex_show = {true},
+  title       = {Exploring Transitions of Graduates From an Online Master's in Computer Science Program to Doctoral Programs},
+  author      = {Deng, Patrick and Greenhalgh, Alexander D. and Yu, Brian and Lytle, Nicholas and Joyner, David A.},
+  year        = {2026},
+  booktitle   = {Proceedings of the 57th ACM Technical Symposium on Computer Science Education (SIGCSE 2026)},
+  publisher   = {ACM},
+  doi         = {10.1145/3770762.3772654},
+  url         = {https://dl.acm.org/doi/10.1145/3770762.3772654},
+  abstract    = {...},
+  selected    = {true}
 }
 ```
 
