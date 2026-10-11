@@ -113,13 +113,13 @@ sections:
 links: []
 references:
   - label: Spark SQL and DataFrame execution
-    href: https://spark.apache.org/docs/3.5.5/sql-programming-guide.html
+    href: https://github.com/apache/spark/blob/v3.5.5/docs/sql-programming-guide.md
   - label: Spark shuffle costs
-    href: https://spark.apache.org/docs/3.5.5/rdd-programming-guide.html#shuffle-operations
+    href: https://github.com/apache/spark/blob/v3.5.5/docs/rdd-programming-guide.md#shuffle-operations
   - label: SQL window functions
-    href: https://spark.apache.org/docs/3.5.5/sql-ref-syntax-qry-select-window.html
+    href: https://github.com/apache/spark/blob/v3.5.5/docs/sql-ref-syntax-qry-select-window.md
   - label: pandas and larger datasets
-    href: https://pandas.pydata.org/pandas-docs/version/2.2.3/user_guide/scale.html
+    href: https://github.com/pandas-dev/pandas/blob/v2.2.3/doc/source/user_guide/scale.rst
   - label: Batch recommendation workflows
     href: https://github.com/awsdocs/amazon-personalize-developer-guide/blob/master/doc_source/recommendations-batch.md
   - label: Training and evaluating a ranking model
