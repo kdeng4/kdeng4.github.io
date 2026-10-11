@@ -32,13 +32,9 @@ const [site, cv] = await Promise.all([getSite(), getCV()]);
         <p>{paragraph}</p>
       ))}
       <div class="inline-links">
-        <a class="text-link" href="/cv/">
-          View my CV
-          <Arrow size={18} />
-        </a>
         <a class="text-link" href={site.resume}>
-          Download resume (PDF)
-          <Arrow direction="diagonal" size={18} />
+          View my resume
+          <Arrow size={18} />
         </a>
       </div>
     </div>

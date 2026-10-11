@@ -5,9 +5,12 @@ import { parse } from "yaml";
 
 const site = parse(readFileSync("content/site.yaml", "utf8")).main as {
   name: string;
+  fullName: string;
   url: string;
   email: string;
   resume: string;
+  role: string;
+  employer: string;
 };
 const projectFiles = readdirSync("content/projects").filter((name) => name.endsWith(".yaml"));
 const projectPaths = projectFiles.map((file) => `/projects/${file.replace(/\.yaml$/, "")}/`);
@@ -36,7 +39,7 @@ for (const path of paths) {
   });
 }
 
-test("visitors can explore every project, find the paper, and download the resume", async ({ page, request }) => {
+test("visitors can explore every project, find the paper, and read the resume", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("link", { name: "Explore my work" }).click();
   await expect(page).toHaveURL(/#projects$/);
@@ -64,9 +67,35 @@ test("visitors can explore every project, find the paper, and download the resum
     "href",
     "https://dl.acm.org/doi/10.1145/3770762.3772654"
   );
-  const resume = await request.get(site.resume);
-  expect(resume.status()).toBe(200);
-  expect((await resume.body()).subarray(0, 5).toString()).toBe("%PDF-");
+  await page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Resume" }).click();
+  await expect(page).toHaveURL(new URL(site.resume, site.url).pathname);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(site.fullName);
+  await expect(page.locator(".page-intro .lead")).toContainText(`${site.role} at ${site.employer}`);
+  await expect(page.getByRole("heading", { name: "Experience", exact: true })).toBeVisible();
+  await expect(
+    page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Resume" })
+  ).toHaveAttribute("aria-current", "page");
+  await expect(page.getByRole("link", { name: /download.*resume/i })).toHaveCount(0);
+});
+
+test("current employment stays consistent across the homepage, biography, resume, and metadata", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator(".hero-introduction")).toContainText(`${site.role} at ${site.employer}`);
+  const person = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent())!);
+  expect(person.jobTitle).toBe(site.role);
+  expect(person.worksFor.name).toBe(site.employer);
+  await page.goto("/about/");
+  const currentTimelineEntry = page.locator(".timeline-list").first().locator("li").first();
+  await expect(currentTimelineEntry.getByRole("heading", { level: 3 })).toHaveText(site.employer);
+  await expect(currentTimelineEntry.locator(".timeline-role")).toHaveText(site.role);
+  await expect(currentTimelineEntry.locator(".timeline-dates")).toContainText("Present");
+  await page.getByRole("link", { name: "View my resume", exact: true }).click();
+  const experience = page.locator(".cv-section").first().locator("article");
+  await expect(experience.first().getByRole("heading", { level: 3 })).toHaveText(site.employer);
+  await expect(experience.first().locator(".cv-entry-meta")).toHaveText(site.role);
+  await expect(experience.first().locator(".mono")).toContainText("Present");
+  await expect(experience.nth(1).getByRole("heading", { level: 3 })).toHaveText("Walmart Canada");
+  await expect(experience.nth(1).locator(".mono")).not.toContainText("Present");
 });
 
 test("the CV retains established results and project source links", async ({ page }) => {
@@ -194,11 +223,15 @@ test("the full portfolio works without JavaScript", async ({ browser }) => {
   await page.locator(".project-link").first().click();
   await expect(page.locator(".project-body")).toBeVisible();
   await expect(page.getByRole("link", { name: site.email })).toBeVisible();
+  await page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Resume" }).click();
+  await expect(page.getByRole("heading", { name: "Experience", exact: true })).toBeVisible();
+  await expect(page.locator(".page-intro .lead")).toContainText(`${site.role} at ${site.employer}`);
   await context.close();
 });
 
 test("legacy links redirect and missing pages have a useful 404", async ({ page, request }) => {
   for (const [from, to] of [
+    ["/assets/pdf/resume.pdf", "/cv/"],
     ["/publications/", "/research/"],
     ["/projects/master-to-phd-pathway-study/", "/projects/masters-to-phd/"],
     ["/projects/Master%20to%20PhD%20Pathway%20Study/", "/projects/masters-to-phd/"],

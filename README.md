@@ -32,7 +32,7 @@ npm run preview
 
 Add a project by adding a YAML file in `content/projects/`. Its filename is its URL identifier. `featured: true` selects it for the homepage; `order` determines the sequence. The homepage shows the first three featured projects. YAML schemas validate required fields and publication references during the build.
 
-All portfolio content is rendered to HTML at build time. Reading, navigating, downloading the resume, and using email links work without JavaScript. The only interface script enhances the visible email link with clipboard copying and feedback. The existing Google Analytics and Search Console settings are retained in `content/site.yaml`; analytics runs only in production and can be disabled with `analytics.enabled: false`.
+All portfolio content is rendered to HTML at build time. Reading, navigating, viewing the online resume, and using email links work without JavaScript. The resume at `/cv/` uses the same YAML as the about page; the retired PDF URL redirects there. The only interface script enhances the visible email link with clipboard copying and feedback. The existing Google Analytics and Search Console settings are retained in `content/site.yaml`; analytics runs only in production and can be disabled with `analytics.enabled: false`.
 
 ## Checks
 
@@ -41,7 +41,7 @@ npx playwright install chromium webkit
 npm run verify
 ```
 
-The browser suite checks all main pages in Chromium and WebKit, including automated accessibility scans, narrow-screen reflow, 200% text sizing, keyboard focus, contact feedback, internal links, redirect compatibility, image dimensions, and the resume download. These checks do not substitute for manual usability testing or real-user Core Web Vitals.
+The browser suite checks all main pages in Chromium and WebKit, including automated accessibility scans, narrow-screen reflow, 200% text sizing, keyboard focus, contact feedback, internal links, redirect compatibility, image dimensions, and online resume navigation. These checks do not substitute for manual usability testing or real-user Core Web Vitals.
 
 Vercel uses `npm ci`, `npm run build`, and `dist/`. Its Git integration builds the site, and a production Deployment Check requires the GitHub Actions **Site verification** job to pass before releasing it to the production domains. See [CI and the release gate](docs/CI.md) for the checks, local validation, and project settings. There is no Ruby, Python, Docker, or Jekyll build step for the active site.
 

@@ -1,6 +1,6 @@
 # Editing the site
 
-Portfolio copy lives in YAML. UI labels such as “All projects” and “Download resume” live in their components; the biography, project explanations, publication data, and homepage copy are data.
+Portfolio copy lives in YAML. UI labels such as “All projects” and “View my resume” live in their components; the biography, project explanations, publication data, and homepage copy are data.
 
 ## Identity and pages
 
@@ -44,6 +44,8 @@ Add a YAML file under `content/publications/`, following the existing entry. `pr
 
 Edit work experience, education, skills, languages, and interests in `content/cv.yaml`. Dates are quoted strings. The about page and CV page use the same data. Project and publication sections of the CV use their respective collections.
 
-Replace `public/assets/pdf/resume.pdf` when updating the downloadable resume. Updating YAML does not regenerate the PDF. Replace `src/assets/portrait.jpg` to change the photograph; Astro regenerates optimised variants on the next build.
+The Resume navigation opens `/cv/`, rendered directly from YAML. There is no downloadable resume attachment to maintain. The retired `/assets/pdf/resume.pdf` URL redirects to `/cv/` in Astro and Vercel; the historical file remains in the Jekyll archive.
+
+Replace `src/assets/portrait.jpg` to change the photograph; Astro regenerates optimised variants on the next build.
 
 Run `npm run build` after content changes. Required fields, URL formats, and publication references are checked before deployment.

@@ -4,13 +4,13 @@ main:
   initials: PD
   url: https://pdeng.pp.ua
   language: en-CA
-  description: Patrick Deng is a data engineer and MLOps practitioner in Toronto, building production data pipelines and applied ML systems.
+  description: Patrick Deng is AI Automation Lead II at Instacart, with a background in data engineering, MLOps, and applied AI.
   email: keqi.deng@outlook.com
   location: Toronto, Canada
-  role: Data Engineer & MLOps
-  employer: Walmart Canada
-  employerUrl: https://www.walmart.ca/
-  resume: /assets/pdf/resume.pdf
+  role: AI Automation Lead II
+  employer: Instacart
+  employerUrl: https://www.instacart.com/
+  resume: /cv/
   searchConsoleVerification: yU2mMf1BswMr-KldkIrf9O9wcWai96gS0icTiOR84Wo
   analytics:
     enabled: true
@@ -30,17 +30,17 @@ main:
     - label: ORCID
       href: https://orcid.org/0009-0008-9727-9269
   home:
-    eyebrow: Data engineer & MLOps · Toronto, Canada
+    eyebrow: AI automation · Toronto, Canada
     heading: Building reliable data.
     accent: Putting AI to work.
     introduction: >-
-      I'm Patrick, a data engineer at Walmart Canada. I build production
-      pipelines and applied ML systems that turn complex data into something useful.
+      I'm Patrick, AI Automation Lead II at Instacart. My background spans
+      data engineering, MLOps, and applied AI.
     primaryAction: Explore my work
     secondaryAction: More about me
     portraitCaption: [An engineer., Always a student.]
     currentLabel: Currently
-    currentDescription: Building data systems at Walmart Canada
+    currentDescription: AI Automation Lead II at Instacart
     projectsTitle: Selected projects
     projectsDescription: A few explorations in reasoning, recognition, and useful software.
     researchTitle: Research & ideas
@@ -68,13 +68,16 @@ main:
   about:
     eyebrow: A little background
     title: Hi, I'm Patrick.
-    introduction: Data engineer. Applied AI practitioner. Always curious.
+    introduction: AI Automation Lead II at Instacart. Engineer by background. Always curious.
     paragraphs:
       - >-
-        I build production data pipelines and applied ML systems at Walmart
-        Canada. I own the end-to-end Ads CRM data warehouse on GCP BigQuery,
-        processing more than 70 million records daily to support customer
-        targeting, segmentation, and marketing decisions.
+        I'm AI Automation Lead II at Instacart, in Commercial Strategy &
+        Acceleration.
+      - >-
+        Previously, I built production data pipelines and applied ML systems
+        at Walmart Canada. I owned the end-to-end Ads CRM data warehouse on
+        GCP BigQuery, processing more than 70 million records daily to support
+        customer targeting, segmentation, and marketing decisions.
       - >-
         My background connects engineering fundamentals with practical data
         work. I hold an M.Sc. in Computer Science from Georgia Tech (2025)

@@ -1,7 +1,6 @@
 ---
 import { getSite } from "../lib/content";
 import Contact from "../components/Contact.astro";
-import Arrow from "../components/Arrow.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -12,7 +11,7 @@ interface Props {
 }
 const site = await getSite();
 const { title, description = site.description, contact = true, noindex = false } = Astro.props;
-const pageTitle = title ? `${title} — ${site.name}` : `${site.name} — Data Engineering & Applied AI`;
+const pageTitle = title ? `${title} — ${site.name}` : `${site.name} — ${site.role}`;
 const canonical = new URL(Astro.url.pathname, site.url);
 const path = Astro.url.pathname;
 const analyticsEnabled = import.meta.env.PROD && site.analytics.enabled;
@@ -22,6 +21,7 @@ const person = {
   name: site.fullName,
   url: site.url,
   jobTitle: site.role,
+  worksFor: { "@type": "Organization", name: site.employer, url: site.employerUrl },
   email: `mailto:${site.email}`,
   sameAs: site.social.map((link) => link.href),
 };
@@ -72,9 +72,8 @@ const person = {
             </li>
           ))}
           <li>
-            <a class="resume-link" href={site.resume}>
+            <a class="resume-link" href={site.resume} aria-current={path === site.resume ? "page" : undefined}>
               Resume
-              <Arrow direction="diagonal" size={15} />
             </a>
           </li>
         </ul>

@@ -6,6 +6,7 @@
   "outputDirectory": "dist",
   "trailingSlash": true,
   "redirects": [
+    { "source": "/assets/pdf/resume.pdf", "destination": "/cv/", "permanent": true },
     { "source": "/publications/", "destination": "/research/", "permanent": true },
     {
       "source": "/projects/master-to-phd-pathway-study/",
