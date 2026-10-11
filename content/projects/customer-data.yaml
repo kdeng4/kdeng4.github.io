@@ -10,17 +10,16 @@ summary: >-
   suggest useful products at the right time. It combined what customers had bought,
   what they were browsing, and when they might need to buy again.
 outcome: >-
-  Marketing received ranked product lists for review before campaign deployment.
-  Each list reflected a customer's likely needs, with repeated products removed
-  and the remaining recommendations ranked again.
+  Marketing received product lists based on purchase history, browsing activity,
+  and estimated repeat purchase timing. Duplicate products were removed and the
+  remaining recommendations ranked again before campaign review.
 stack: [SQL, PySpark, Batch processing, Recommendation ranking, Repeat purchase analysis, Deduplication]
 sections:
   - title: Estimate what a customer may need next
     paragraphs:
       - >-
-        I studied repeat purchases across groups of related products.
-        A customer can switch between items that serve the same need, so
-        the analysis worked at the category level.
+        I studied repeat purchases at the category level, grouping related
+        products for the analysis.
       - >-
         These patterns gave a rough estimate of the time between purchases
         in each category. I compared that estimate with each customer's
@@ -43,20 +42,20 @@ sections:
     paragraphs:
       - >-
         The ranking relied on a combined view of past purchases. I linked
-        purchase records from different payment cards to an encrypted customer
+        purchase records from different payment cards to a customer
         token, so recommendations could draw on that customer's purchase history.
         Recommendations were calculated for each token.
       - >-
-        SQL handled the initial data preparation, including removing duplicate
-        transaction records. I used PySpark for model building and batch runs,
-        so the heavier calculations could run in parallel across the data.
+        SQL handled the initial data preparation. The workflow also removed
+        duplicate transaction records. I used PySpark for model building and
+        batch runs, so the heavier calculations could run in parallel across
+        the data.
   - title: Make the workflow easy to review
     paragraphs:
       - >-
         During development, I started with rules that captured known business
-        logic. This gave the first version predictable results and made it
-        quick to review. The team could check the output, give feedback,
-        and refine the logic in short cycles.
+        logic. This gave the team a clear way to check the first version,
+        provide feedback, and refine the logic.
       - >-
         The final product lists went to marketing for review before campaign
         deployment.
