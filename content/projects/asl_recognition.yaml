@@ -1,38 +1,39 @@
 title: ASL Recognition with Hidden Markov Models
-shortTitle: Recognising sign language in motion
+shortTitle: Recognising sign language from video
 category: Machine learning
 year: "2024"
-period: January – May 2024
+period: January to May 2024
 context: Artificial Intelligence (CS 6601), Georgia Tech
-role: Feature extraction & sequence modelling
+role: Hand position features and sequence models
 featured: true
 order: 2
 summary: >-
-  A system for recognising American Sign Language gestures from video.
-  I extracted hand-position features and trained Hidden Markov Models
-  to capture how each sign unfolds over time.
-outcome: A working gesture recognition system using probabilistic sequence models.
+  I built a system that recognises American Sign Language gestures from video.
+  It uses hand position features and Hidden Markov Models to follow
+  how each sign moves over time.
+outcome: A working system for recognising sign language gestures from video.
 stack: [Python, Hidden Markov Models, NumPy]
 sections:
-  - title: The question
+  - title: The task
     paragraphs:
       - >-
-        A sign is a sequence of movements, rather than a single static
-        pose. Recognising American Sign Language from video requires a
-        model that can account for changes in hand position over time.
+        A sign depends on movement as well as hand position. To recognise
+        American Sign Language from video, the model needs to follow
+        how the hands move over time.
   - title: What I built
     paragraphs:
       - >-
-        I designed an AI system using Hidden Markov Models to recognise
-        gestures from video input, training on a labelled dataset of ASL signs.
+        I trained Hidden Markov Models on a labelled set of ASL signs.
+        These models use probabilities to describe how hand positions
+        change during a gesture.
     bullets:
-      - Extracted hand-position features from video sequences.
+      - Extracted hand position features from video sequences.
       - Trained Hidden Markov Models with hmmlearn and NumPy.
-      - Used probabilistic sequence modelling to capture the temporal dynamics of gestures.
+      - Modelled how hand positions change over the course of a gesture.
   - title: The result
     paragraphs:
       - >-
-        The system recognised gestures across a vocabulary of signs.
-        This project connected feature engineering with probabilistic
-        modelling to work with real sequences of movement.
+        The system recognised gestures across a vocabulary of ASL signs.
+        It combined hand position features with models of how each sign
+        moves over time.
 links: []

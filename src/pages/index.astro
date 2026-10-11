@@ -83,7 +83,7 @@ const projects = allProjects.filter((project) => project.data.featured).slice(0,
       <section class="home-section" id="research" aria-labelledby="research-heading">
         <div class="section-heading">
           <div>
-            <p class="section-index mono">02 / Looking deeper</p>
+            <p class="section-index mono">02 / Research</p>
             <h2 id="research-heading">{site.home.researchTitle}</h2>
             <p>{site.home.researchDescription}</p>
           </div>
@@ -100,11 +100,16 @@ const projects = allProjects.filter((project) => project.data.featured).slice(0,
 
     <section class="home-section home-about" aria-labelledby="about-heading">
       <div>
-        <p class="section-index mono">03 / Beyond the work</p>
+        <p class="section-index mono">03 / Experience</p>
         <h2 id="about-heading">{site.home.aboutTitle}</h2>
       </div>
-      <div>
+      <div class="prose">
         <p>{site.home.aboutDescription}</p>
+        <ul>
+          {site.home.workHighlights.map((highlight) => (
+            <li>{highlight}</li>
+          ))}
+        </ul>
         <a class="text-link" href="/about/">
           {site.home.aboutLink}
           <Arrow size={18} />

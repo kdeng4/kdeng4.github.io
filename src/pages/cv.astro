@@ -7,7 +7,7 @@ const [site, cv, projects, publications] = await Promise.all([getSite(), getCV()
 
 <BaseLayout
   title="Resume"
-  description={`${site.fullName} — ${site.role} at ${site.employer}. Experience, education, and skills.`}
+  description={`${site.fullName}, ${site.role} at ${site.employer}. Experience, education, and skills.`}
 >
   <div class="container interior-page cv-page">
     <header class="page-intro">
@@ -24,7 +24,7 @@ const [site, cv, projects, publications] = await Promise.all([getSite(), getCV()
           <div class="cv-entry-heading">
             <h3>{item.company}</h3>
             <span class="mono">
-              {item.start} — {item.end === "present" ? "Present" : item.end}
+              {item.start} to {item.end === "present" ? "Present" : item.end}
             </span>
           </div>
           <p class="cv-entry-meta">
@@ -51,7 +51,7 @@ const [site, cv, projects, publications] = await Promise.all([getSite(), getCV()
               <a href={item.url}>{item.institution}</a>
             </h3>
             <span class="mono">
-              {item.start} — {item.end}
+              {item.start} to {item.end}
             </span>
           </div>
           <p>

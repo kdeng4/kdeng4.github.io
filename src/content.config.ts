@@ -48,6 +48,7 @@ const site = defineCollection({
       researchDescription: text,
       aboutTitle: text,
       aboutDescription: text,
+      workHighlights: z.array(text).min(1),
       aboutLink: text,
     }),
     projects: z.object({ eyebrow: text, title: text, description: text }),

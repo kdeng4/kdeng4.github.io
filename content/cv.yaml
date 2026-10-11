@@ -11,40 +11,33 @@ main:
       location: Mississauga ON
       start: "2024"
       end: "2026"
-      summary: Owned the end-to-end Ads CRM data warehouse on GCP BigQuery, processing 70 M+ records daily
-        to power customer targeting, segmentation, and marketing ROI.
+      summary: Owned a BigQuery data warehouse used for customer targeting and marketing decisions.
       highlights:
-        - Architected and owned the Ads CRM data warehouse in GCP BigQuery, orchestrating ETL
-          pipelines via Airflow that process 70 M+ records daily
-        - Designed a customer segmentation framework using clustering and dimensionality-reduction
-          techniques, improving ad ROI
-        - Built an identity-resolution pipeline linking web and in-store transactions, increasing
-          identifiable customer events by ~2 %
-        - Developed a GenAI agentic tool with LangGraph and LLM APIs (GPT, Gemini) for automated
-          data-quality checks
-        - Conducted statistical analyses (regression, time-series, A/B testing) on large-scale
-          customer datasets
+        - Designed and owned the Ads CRM data warehouse in GCP BigQuery, with Airflow ETL pipelines
+          processing over 70 million records a day
+        - Improved advertising returns by grouping customers with clustering and dimensionality reduction
+        - Linked website and store transactions to identify about 2% more customer events
+        - Built an AI agent with LangGraph and GPT and Gemini APIs to automate data quality checks
+        - Used regression, time series analysis, and A/B tests to study large customer datasets
     - company: Dane Creek Capital Corp.
       position: Data Engineer
       location: Mississauga ON
       start: "2021"
       end: "2024"
-      summary: Built the cloud data platform from the ground up for a multi-brand B2C/B2B company,
-        delivering BI dashboards, predictive models, and cost-efficient infrastructure.
+      summary: Built a cloud data platform from scratch for a company with several brands serving
+        consumers and businesses. Delivered reporting dashboards and prediction models while keeping
+        infrastructure costs down.
       highlights:
-        - Designed a cloud-based data warehouse on GCP with Airflow, integrating CRM, ERP, and
-          analytics sources and improving reporting accuracy by 25 %
-        - Deployed Metabase as the company-wide BI tool, reducing data-tooling licensing costs by
-          ~40 %
-        - Built predictive models for customer behaviour analysis (churn prediction, product
-          recommendations)
-        - Designed a loyalty-program data framework for customer engagement metrics and redemption
-          tracking
-        - Championed adoption of GCP and Azure cloud services for scalable infrastructure
+        - Designed a GCP warehouse with Airflow to combine CRM, ERP, and analytics data, improving
+          reporting accuracy by 25%
+        - Rolled out Metabase across the company, cutting data software licensing costs by about 40%
+        - Built models to predict which customers might leave and recommend products
+        - Built a loyalty data system to track customer activity and reward redemptions
+        - Helped teams adopt GCP and Azure for cloud infrastructure that could grow with the business
   education:
     - institution: Georgia Institute of Technology
       degree: Master of Science
-      area: Computer Science - Interactive Intelligence
+      area: Computer Science, Interactive Intelligence
       start: "2022"
       end: "2025"
       url: https://www.gatech.edu
@@ -67,7 +60,7 @@ main:
       url: https://www.ucalgary.ca
       score: "3.8"
   skills:
-    - name: Languages
+    - name: Programming languages
       items:
         - Python
         - SQL
@@ -101,7 +94,7 @@ main:
         - PyTorch
         - TensorFlow
         - Scikit-learn
-        - NLP / Transformers
+        - Natural Language Processing / Transformers
         - LLM APIs
         - Recommendation Systems
         - Clustering
@@ -125,12 +118,12 @@ main:
     - name: French
       proficiency: Beginner
   interests:
-    - name: Outdoor Activities
+    - name: Outdoor activities
       items:
         - Skiing
         - Hiking
-        - Trail Adventures
-    - name: Creative Pursuits
+        - Trail adventures
+    - name: Creative interests
       items:
         - Reading
         - Music

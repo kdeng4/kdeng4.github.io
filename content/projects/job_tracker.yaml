@@ -1,40 +1,39 @@
 title: Job Application Timeline Tracker
-shortTitle: A clearer view of the job search
+shortTitle: Tracking job applications in one place
 category: Software development
 year: "2023"
-period: September – December 2023
+period: September to December 2023
 context: Software Development Process (CS 6300), Georgia Tech
-role: Android development · team of three
+role: Android development in a team of three
 featured: true
 order: 3
 summary: >-
-  An Android app for organising job applications from start to finish.
-  Built in a team of three, it combines a timeline view, editable entries,
-  and local SQLite storage for offline access.
-outcome: A full-featured Android application with offline persistence.
+  I helped build an Android app in a team of three. It keeps job
+  applications in a timeline, lets users edit entries, and saves them
+  locally for offline access.
+outcome: An Android app with a timeline, editable entries, and offline storage.
 stack: [Java, Android, SQLite]
 sections:
-  - title: The question
+  - title: The task
     paragraphs:
       - >-
-        A job search involves multiple applications, changing statuses,
-        and dates to keep track of. The goal was to make that information
-        easier to organise and review in one place.
+        Job applications come with dates, details, and changing statuses.
+        We wanted to make them easier to track and review in one place.
   - title: What we built
     paragraphs:
       - >-
-        Working in a team of three, I helped develop an Android application
-        for creating, editing, and monitoring job applications.
+        I worked with two teammates to build an Android app for adding,
+        editing, and tracking job applications.
     bullets:
-      - A timeline view for tracking application status across positions.
-      - Create, edit, and delete application entries with supporting metadata.
-      - Local SQLite persistence for offline access.
-  - title: The process
+      - A timeline that shows the status of each application.
+      - Options to add, edit, and delete applications and their details.
+      - A local SQLite database that keeps entries available offline.
+  - title: How we worked
     paragraphs:
       - >-
-        We followed the software development lifecycle from requirements
-        analysis and design through implementation, test planning, and
-        documentation. Development used Java and IntelliJ IDEA / Android Studio.
+        We took the app from requirements and design through development,
+        test planning, and documentation. We used Java with IntelliJ IDEA
+        and Android Studio.
 links:
   - label: Source code (Georgia Tech)
     href: https://github.gatech.edu/gt-omscs-se-2023fall/6300Fall23Team159

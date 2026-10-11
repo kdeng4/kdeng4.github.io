@@ -44,7 +44,7 @@ const [site, cv] = await Promise.all([getSite(), getCV()]);
         {cv.experience.map((item) => (
           <li>
             <p class="timeline-dates mono">
-              {item.start} — {item.end === "present" ? "Present" : item.end}
+              {item.start} to {item.end === "present" ? "Present" : item.end}
             </p>
             <div>
               <h3>{item.company}</h3>
@@ -61,7 +61,7 @@ const [site, cv] = await Promise.all([getSite(), getCV()]);
         {cv.education.map((item) => (
           <li>
             <p class="timeline-dates mono">
-              {item.start} — {item.end}
+              {item.start} to {item.end}
             </p>
             <div>
               <h3>{item.institution}</h3>

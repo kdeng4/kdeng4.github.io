@@ -100,7 +100,7 @@ test("current employment stays consistent across the homepage, biography, resume
 
 test("the CV retains established results and project source links", async ({ page }) => {
   await page.goto("/cv/");
-  await expect(page.getByText(/improving reporting accuracy by 25 %/)).toBeVisible();
+  await expect(page.getByText(/improving reporting accuracy by 25%/)).toBeVisible();
   await expect(page.getByText("GCP (BigQuery, Vertex AI)", { exact: false })).toBeVisible();
   for (const href of [
     "https://github.gatech.edu/kdeng49/kbai_2024summer_project.git",

@@ -4,7 +4,7 @@ main:
   initials: PD
   url: https://pdeng.pp.ua
   language: en-CA
-  description: Patrick Deng is AI Automation Lead II at Instacart, with a background in data engineering, MLOps, and applied AI.
+  description: Patrick Deng is AI Automation Lead II at Instacart. Explore his work in data engineering, AI, and computer science education.
   email: keqi.deng@outlook.com
   location: Toronto, Canada
   role: AI Automation Lead II
@@ -31,64 +31,62 @@ main:
       href: https://orcid.org/0009-0008-9727-9269
   home:
     eyebrow: AI automation · Toronto, Canada
-    heading: Building reliable data.
-    accent: Putting AI to work.
+    heading: I build data systems.
+    accent: And put AI to work.
     introduction: >-
-      I'm Patrick, AI Automation Lead II at Instacart. My background spans
-      data engineering, MLOps, and applied AI.
+      I'm Patrick, AI Automation Lead II at Instacart. Before that, I built
+      data pipelines and machine learning tools at Walmart Canada.
     primaryAction: Explore my work
     secondaryAction: More about me
-    portraitCaption: [An engineer., Always a student.]
+    portraitCaption: [Patrick Deng, "Toronto, Canada"]
     currentLabel: Currently
     currentDescription: AI Automation Lead II at Instacart
     projectsTitle: Selected projects
-    projectsDescription: A few explorations in reasoning, recognition, and useful software.
-    researchTitle: Research & ideas
-    researchDescription: Looking at the people behind the technology.
-    aboutTitle: An engineer, with a wider lens.
+    projectsDescription: Visual puzzles, sign language recognition, and a job search app.
+    researchTitle: Research
+    researchDescription: How an online master's degree can lead to a PhD.
+    aboutTitle: My experience
     aboutDescription: >-
-      My path runs from chemical engineering to computer science, with
-      hands-on data work along the way. I care about understanding the problem
-      as much as building the solution. Away from the keyboard, you'll find
-      me hiking with Roxy or planning the next ski trip.
-    aboutLink: A little more about me
+      My background is in chemical engineering and computer science.
+      I've worked on data pipelines, customer analysis, and AI tools.
+    workHighlights:
+      - At Walmart Canada, I owned a data warehouse that handled over 70 million records a day.
+      - At Dane Creek, I improved reporting accuracy by 25% and cut data tool licensing costs by about 40%.
+    aboutLink: More about my background
   projects:
-    eyebrow: Selected work
-    title: From questions to working systems.
+    eyebrow: Projects
+    title: What I've built and studied.
     description: >-
-      Projects in applied AI, software development, and computer science
-      education. Each one starts with a concrete problem and a way to explore it.
+      AI projects, an Android app, and research on computer science education.
+      Each project explains the problem, my role, and the result.
   research:
     eyebrow: Research
-    title: Technology, and the people it serves.
+    title: From an online master's to a PhD.
     description: >-
-      Research on computer science education and the paths it opens.
-      Alongside building systems, I'm interested in how people learn,
-      reason, and move into research.
+      I study how Georgia Tech's online computer science graduates move into
+      doctoral research. Our work uses enrolment data, surveys, and interviews.
   about:
-    eyebrow: A little background
+    eyebrow: About
     title: Hi, I'm Patrick.
-    introduction: AI Automation Lead II at Instacart. Engineer by background. Always curious.
+    introduction: AI Automation Lead II at Instacart. Based in Toronto.
     paragraphs:
       - >-
-        I'm AI Automation Lead II at Instacart, in Commercial Strategy &
-        Acceleration.
+        At Instacart, I work on AI automation in Commercial Strategy & Acceleration.
       - >-
-        Previously, I built production data pipelines and applied ML systems
-        at Walmart Canada. I owned the end-to-end Ads CRM data warehouse on
-        GCP BigQuery, processing more than 70 million records daily to support
-        customer targeting, segmentation, and marketing decisions.
+        Before Instacart, I worked on data pipelines and machine learning at
+        Walmart Canada. I owned a BigQuery data warehouse that handled over
+        70 million records a day. It supported customer analysis and marketing
+        decisions.
       - >-
-        My background connects engineering fundamentals with practical data
-        work. I hold an M.Sc. in Computer Science from Georgia Tech (2025)
-        and an M.Eng. in Chemical Engineering from the University of Calgary
-        (2020). My work has included customer segmentation, recommendation
-        systems, and GenAI tools for data quality.
+        I earned a master's in chemical engineering at the University of
+        Calgary in 2020. I completed a master's in computer science at Georgia
+        Tech in 2025. My work has included grouping customers, recommending
+        products, and using AI to check data quality.
       - >-
-        Outside work, I enjoy hiking with my dog, Roxy, skiing, reading,
-        and music. I'm fluent in English and Mandarin Chinese.
+        Outside work, I hike with my dog, Roxy, ski, read, and listen to music.
+        I'm fluent in English and Mandarin Chinese.
   contact:
     eyebrow: Get in touch
-    title: Good work starts with a conversation.
-    description: Have a question about my work, research, or a problem you're exploring? I'd be glad to hear from you.
-  footer: Built with care. Kept simple.
+    title: Let's talk.
+    description: Have a question about a project or my work? Send me an email.
+  footer: Based in Toronto, Canada.

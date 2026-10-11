@@ -11,7 +11,7 @@ interface Props {
 }
 const site = await getSite();
 const { title, description = site.description, contact = true, noindex = false } = Astro.props;
-const pageTitle = title ? `${title} — ${site.name}` : `${site.name} — ${site.role}`;
+const pageTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.role}`;
 const canonical = new URL(Astro.url.pathname, site.url);
 const path = Astro.url.pathname;
 const analyticsEnabled = import.meta.env.PROD && site.analytics.enabled;
@@ -55,7 +55,7 @@ const person = {
       Skip to content
     </a>
     <header class="site-header container">
-      <a class="brand" href="/" aria-label={`${site.name} — home`}>
+      <a class="brand" href="/" aria-label={`${site.name}, home`}>
         <span class="brand-mark" aria-hidden="true">
           {site.initials.toLowerCase()}
           <span class="brand-dot">.</span>

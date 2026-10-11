@@ -1,42 +1,41 @@
 title: Raven's Progressive Matrices Agent
-shortTitle: Reasoning through visual puzzles
-category: Knowledge-based AI
+shortTitle: Solving visual puzzles
+category: Knowledge based AI
 year: "2024"
-period: May – August 2024
-context: Knowledge-Based AI (CS 7637), Georgia Tech
-role: AI agent design & implementation
+period: May to August 2024
+context: Knowledge Based AI (CS 7637), Georgia Tech
+role: AI agent design and development
 featured: true
 order: 1
 summary: >-
-  An AI agent that solves visual analogy problems. I used semantic networks
-  and generate-and-test strategies to model transformations, reaching
+  I built an AI agent that finds the missing image in a visual puzzle.
+  It models changes between images and tests possible answers, reaching
   80% accuracy on advanced problem sets.
 outcome: 80% accuracy on advanced problem sets.
 stack: [Python, Semantic networks, Visual reasoning]
 sections:
-  - title: The question
+  - title: The task
     paragraphs:
       - >-
-        Raven's Progressive Matrices test the ability to recognise patterns
-        and reason by analogy. Given a sequence of visual frames, the task
-        is to infer the transformation and select the missing frame.
+        Raven's Progressive Matrices test pattern recognition and reasoning.
+        Each puzzle shows a grid of images with one missing. The agent
+        must find how the images change and choose the one that completes
+        the grid.
   - title: What I built
     paragraphs:
       - >-
-        I designed and implemented an agent that handles both 2×2 and 3×3
-        matrices, using knowledge-based techniques to represent and compare
-        visual relationships.
+        I designed and built an agent for 2×2 and 3×3 grids. It records
+        how images relate to each other, then uses those relationships
+        to compare possible answers.
     bullets:
-      - Represented transformations between frames with semantic networks.
-      - Applied generate-and-test strategies to choose among candidate answers.
-      - Modelled aspects of human reasoning as explicit computational steps.
+      - Used semantic networks, which map relationships, to record changes between images.
+      - Tested possible answers against the patterns in the puzzle.
+      - Turned parts of human reasoning into steps the agent could follow.
   - title: The result
     paragraphs:
       - >-
-        The agent achieved 80% accuracy on advanced problem sets. The work
-        explored how structured representations and reasoning strategies
-        can solve visual problems without treating them solely as
-        classification tasks.
+        The agent reached 80% accuracy on advanced problem sets. It used
+        a model of visual relationships to work through each puzzle.
 links:
   - label: Source code (Georgia Tech)
     href: https://github.gatech.edu/kdeng49/kbai_2024summer_project.git

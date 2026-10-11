@@ -1,36 +1,36 @@
 title: Pathways from an Online Master's to a PhD
-shortTitle: From online learning to doctoral research
+shortTitle: From an online master's to a PhD
 category: Education research
 year: "2026"
 period: SIGCSE 2026
 context: Georgia Tech · OMSCS
-role: Co-author
+role: Research coauthor
 featured: false
 order: 4
 summary: >-
-  A research study on how Georgia Tech's online master's in computer
-  science prepares graduates for STEM doctoral programmes, using
-  enrolment data, surveys, and interviews. Presented at SIGCSE 2026.
-outcome: A co-authored publication presented at SIGCSE 2026.
+  I coauthored a study of how Georgia Tech's online computer science
+  master's degree prepares graduates for a PhD. It uses enrolment data,
+  surveys, and interviews, and was presented at SIGCSE 2026.
+outcome: A research paper presented at SIGCSE 2026.
 stack: [Education research, Surveys, Interviews]
 sections:
   - title: The question
     paragraphs:
       - >-
-        How does a large online master's programme in computer science
-        prepare graduates for STEM PhD programmes? This study considers
-        the experiences of alumni who made that transition.
+        How does a large online computer science master's programme
+        prepare graduates for a PhD in science, technology, engineering,
+        or maths? We studied alumni who made that move.
   - title: The study
     paragraphs:
       - >-
-        I co-authored this research with Alexander D. Greenhalgh, Brian Yu,
+        I coauthored this research with Alexander D. Greenhalgh, Brian Yu,
         Nicholas Lytle, and David A. Joyner. The study draws on enrolment
-        data, surveys, and interviews to understand graduates' pathways
-        into doctoral research.
+        data, surveys, and interviews to understand how graduates
+        move into PhD research.
     bullets:
-      - Examined the role of graduate research experience and rigorous coursework in PhD readiness.
-      - Considered how affordable, asynchronous programmes support non-traditional students.
-      - Developed recommendations for research opportunities for PhD-bound students.
+      - Examined how graduate research experience and demanding coursework prepare students for a PhD.
+      - Considered how affordable courses on a flexible schedule support students outside a traditional campus programme.
+      - Recommended ways to give students planning a PhD more research opportunities.
   - title: Publication
     paragraphs:
       - >-
@@ -43,5 +43,5 @@ links:
     href: https://dl.acm.org/doi/10.1145/3770762.3772654
   - label: SIGCSE 2026 conference
     href: https://sites.gatech.edu/research/sigcse-2026/
-  - label: Explore topics & organisations on Tableau
+  - label: Explore topics and organisations on Tableau
     href: https://public.tableau.com/views/SIGCSE2026TopicsandOrgs/PROMO?:showVizHome=no

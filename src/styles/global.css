@@ -171,6 +171,9 @@
   .home-about > div > p:not(.section-index) {
     margin-bottom: 16px;
   }
+  .home-about .text-link {
+    margin-top: 20px;
+  }
   .interior-page {
     padding-top: 64px;
     padding-bottom: 72px;

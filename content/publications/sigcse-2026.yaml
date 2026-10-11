@@ -1,5 +1,5 @@
 title: Exploring Transitions of Graduates From an Online Master's in Computer Science Program to Doctoral Programs
-shortTitle: From an online master's to doctoral research
+shortTitle: From an online master's to a PhD
 year: "2026"
 venue: SIGCSE 2026
 authors:
@@ -9,9 +9,9 @@ authors:
   - Nicholas Lytle
   - David A. Joyner
 description: >-
-  How does an online computer science degree prepare graduates for a PhD?
-  Our study draws on enrolment data, surveys, and interviews with Georgia
-  Tech OMSCS alumni to explore their paths into doctoral research.
+  We studied how Georgia Tech's online computer science master's degree
+  prepares graduates for a PhD. The study uses enrolment data, surveys,
+  and interviews with OMSCS alumni.
 href: https://dl.acm.org/doi/10.1145/3770762.3772654
 doi: 10.1145/3770762.3772654
 project: masters-to-phd
