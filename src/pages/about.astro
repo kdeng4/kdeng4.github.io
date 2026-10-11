@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Arrow from "../components/Arrow.astro";
+import { getSite, getCV } from "../lib/content";
+import portrait from "../assets/portrait.jpg";
+const [site, cv] = await Promise.all([getSite(), getCV()]);
+---
+
+<BaseLayout title="About" description={site.about.introduction}>
+  <div class="container interior-page about-page">
+    <header class="page-intro about-intro">
+      <div>
+        <p class="eyebrow">{site.about.eyebrow}</p>
+        <h1>{site.about.title}</h1>
+        <p class="lead">{site.about.introduction}</p>
+      </div>
+      <Image
+        src={portrait}
+        alt="Patrick Deng"
+        width={180}
+        height={200}
+        widths={[180, 360]}
+        sizes="(max-width: 600px) 96px, 180px"
+        format="webp"
+        quality={80}
+        loading="eager"
+      />
+    </header>
+    <div class="prose about-biography">
+      {site.about.paragraphs.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+      <div class="inline-links">
+        <a class="text-link" href="/cv/">
+          View my CV
+          <Arrow size={18} />
+        </a>
+        <a class="text-link" href={site.resume}>
+          Download resume (PDF)
+          <Arrow direction="diagonal" size={18} />
+        </a>
+      </div>
+    </div>
+    <section class="background-section" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Where I've worked</h2>
+      <ol class="timeline-list">
+        {cv.experience.map((item) => (
+          <li>
+            <p class="timeline-dates mono">
+              {item.start} — {item.end === "present" ? "Present" : item.end}
+            </p>
+            <div>
+              <h3>{item.company}</h3>
+              <p class="timeline-role">{item.position}</p>
+              <p>{item.summary}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+    <section class="background-section" aria-labelledby="education-heading">
+      <h2 id="education-heading">Where I've studied</h2>
+      <ol class="timeline-list">
+        {cv.education.map((item) => (
+          <li>
+            <p class="timeline-dates mono">
+              {item.start} — {item.end}
+            </p>
+            <div>
+              <h3>{item.institution}</h3>
+              <p>
+                {item.degree} · {item.area}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  </div>
+</BaseLayout>

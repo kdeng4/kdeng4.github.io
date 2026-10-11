@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Arrow from "./Arrow.astro";
+
+interface Props {
+  projects: CollectionEntry<"projects">[];
+}
+const { projects } = Astro.props;
+---
+
+<ol class="project-list">
+  {projects.map((project, index) => (
+    <li class="project-row">
+      <span class="project-number mono" aria-hidden="true">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+      <article>
+        <div class="project-meta">
+          <span>{project.data.category}</span>
+          <span>{project.data.year}</span>
+        </div>
+        <h3>
+          <a class="project-link" href={`/projects/${project.id}/`}>
+            <span>{project.data.shortTitle}</span>
+            <Arrow direction="diagonal" size={24} />
+          </a>
+        </h3>
+        <p class="project-summary">{project.data.summary}</p>
+        <ul class="stack-list" aria-label="Tools and techniques">
+          {project.data.stack.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </article>
+    </li>
+  ))}
+</ol>

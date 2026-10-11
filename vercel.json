@@ -1,8 +1,26 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "jekyll",
-  "installCommand": "dnf install -y ImageMagick && BUNDLE_PATH=vendor/bundle bundle install && python3 -m venv .venv && .venv/bin/python -m pip install nbconvert",
-  "buildCommand": "RUBYOPT=-EUTF-8 BUNDLE_PATH=vendor/bundle PATH=\"$PWD/.venv/bin:$PATH\" JEKYLL_ENV=production bundle exec jekyll build",
-  "outputDirectory": "_site",
-  "trailingSlash": true
+  "framework": "astro",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/publications/", "destination": "/research/", "permanent": true },
+    {
+      "source": "/projects/master-to-phd-pathway-study/",
+      "destination": "/projects/masters-to-phd/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/Master%20to%20PhD%20Pathway%20Study/",
+      "destination": "/projects/masters-to-phd/",
+      "permanent": true
+    },
+    {
+      "source": "/projects/Master-to-PhD-Pathway-Study/",
+      "destination": "/projects/masters-to-phd/",
+      "permanent": true
+    }
+  ]
 }

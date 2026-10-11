@@ -1,0 +1,91 @@
+main:
+  name: Patrick Deng
+  fullName: Patrick (Keqi) Deng
+  initials: PD
+  url: https://pdeng.pp.ua
+  language: en-CA
+  description: Patrick Deng is a data engineer and MLOps practitioner in Toronto, building production data pipelines and applied ML systems.
+  email: keqi.deng@outlook.com
+  location: Toronto, Canada
+  role: Data Engineer & MLOps
+  employer: Walmart Canada
+  employerUrl: https://www.walmart.ca/
+  resume: /assets/pdf/resume.pdf
+  searchConsoleVerification: yU2mMf1BswMr-KldkIrf9O9wcWai96gS0icTiOR84Wo
+  analytics:
+    enabled: true
+    googleId: G-ML0SG7R2BY
+  navigation:
+    - label: Projects
+      href: /projects/
+    - label: Research
+      href: /research/
+    - label: About
+      href: /about/
+  social:
+    - label: GitHub
+      href: https://github.com/kdeng4
+    - label: LinkedIn
+      href: https://www.linkedin.com/in/deng-patrick
+    - label: ORCID
+      href: https://orcid.org/0009-0008-9727-9269
+  home:
+    eyebrow: Data engineer & MLOps · Toronto, Canada
+    heading: Building reliable data.
+    accent: Putting AI to work.
+    introduction: >-
+      I'm Patrick, a data engineer at Walmart Canada. I build production
+      pipelines and applied ML systems that turn complex data into something useful.
+    primaryAction: Explore my work
+    secondaryAction: More about me
+    portraitCaption: [An engineer., Always a student.]
+    currentLabel: Currently
+    currentDescription: Building data systems at Walmart Canada
+    projectsTitle: Selected projects
+    projectsDescription: A few explorations in reasoning, recognition, and useful software.
+    researchTitle: Research & ideas
+    researchDescription: Looking at the people behind the technology.
+    aboutTitle: An engineer, with a wider lens.
+    aboutDescription: >-
+      My path runs from chemical engineering to computer science, with
+      hands-on data work along the way. I care about understanding the problem
+      as much as building the solution. Away from the keyboard, you'll find
+      me hiking with Roxy or planning the next ski trip.
+    aboutLink: A little more about me
+  projects:
+    eyebrow: Selected work
+    title: From questions to working systems.
+    description: >-
+      Projects in applied AI, software development, and computer science
+      education. Each one starts with a concrete problem and a way to explore it.
+  research:
+    eyebrow: Research
+    title: Technology, and the people it serves.
+    description: >-
+      Research on computer science education and the paths it opens.
+      Alongside building systems, I'm interested in how people learn,
+      reason, and move into research.
+  about:
+    eyebrow: A little background
+    title: Hi, I'm Patrick.
+    introduction: Data engineer. Applied AI practitioner. Always curious.
+    paragraphs:
+      - >-
+        I build production data pipelines and applied ML systems at Walmart
+        Canada. I own the end-to-end Ads CRM data warehouse on GCP BigQuery,
+        processing more than 70 million records daily to support customer
+        targeting, segmentation, and marketing decisions.
+      - >-
+        My background connects engineering fundamentals with practical data
+        work. I hold an M.Sc. in Computer Science from Georgia Tech (2025)
+        and an M.Eng. in Chemical Engineering from the University of Calgary
+        (2020). My work has included customer segmentation, recommendation
+        systems, and GenAI tools for data quality.
+      - >-
+        Outside work, I enjoy hiking with my dog, Roxy, skiing, reading,
+        and music. I'm fluent in English and Mandarin Chinese.
+  contact:
+    eyebrow: Get in touch
+    title: Good work starts with a conversation.
+    description: Have a question about my work, research, or a problem you're exploring? I'd be glad to hear from you.
+  footer: Built with care. Kept simple.

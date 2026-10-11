@@ -1,0 +1,16 @@
+legacy/
+.agents/
+.claude/
+.codex/
+output/
+playwright-report/
+test-results/
+.astro/
+dist/
+node_modules/
+_site/
+.bundle/
+vendor/
+.venv/
+.env
+.env.*

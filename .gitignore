@@ -19,3 +19,12 @@ vendor
 # Python bytecode from bin/ helper scripts
 __pycache__/
 *.pyc
+
+# Astro and browser verification
+.astro/
+dist/
+.vercel/
+.env
+.env.*
+!.env.example
+playwright-report/

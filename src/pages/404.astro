@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Arrow from "../components/Arrow.astro";
+---
+
+<BaseLayout title="Page not found" noindex contact={false}>
+  <div class="container interior-page not-found">
+    <p class="eyebrow">404 / Page not found</p>
+    <h1>A small detour.</h1>
+    <p class="lead">This page may have moved. You can head home or explore my projects.</p>
+    <div class="hero-actions">
+      <a class="button" href="/">
+        Back home
+        <Arrow size={18} />
+      </a>
+      <a class="text-link" href="/projects/">
+        View projects
+        <Arrow size={18} />
+      </a>
+    </div>
+  </div>
+</BaseLayout>

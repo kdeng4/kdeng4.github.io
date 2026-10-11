@@ -1,12 +1,34 @@
 {
+  "name": "patrick-deng-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^22.12.0 || ^24.0.0"
+  },
   "scripts": {
-    "lint:prettier": "prettier . --check"
+    "dev": "astro dev --host 127.0.0.1",
+    "check": "astro check && tsc --noEmit",
+    "build": "npm run check && astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "lint:prettier": "prettier . --check",
+    "format": "prettier . --write",
+    "verify": "npm run lint:prettier && npm run build && npm test",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.3.8",
+    "yaml": "2.9.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.56.1",
-    "@shopify/prettier-plugin-liquid": "^1.10.0",
-    "pixelmatch": "^7.1.0",
-    "pngjs": "^7.0.0",
-    "prettier": "^3.8.0"
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.58.2",
+    "@types/node": "24.19.2",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.1",
+    "typescript": "6.0.3"
   }
 }

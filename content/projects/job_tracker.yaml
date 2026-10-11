@@ -1,0 +1,40 @@
+title: Job Application Timeline Tracker
+shortTitle: A clearer view of the job search
+category: Software development
+year: "2023"
+period: September – December 2023
+context: Software Development Process (CS 6300), Georgia Tech
+role: Android development · team of three
+featured: true
+order: 3
+summary: >-
+  An Android app for organising job applications from start to finish.
+  Built in a team of three, it combines a timeline view, editable entries,
+  and local SQLite storage for offline access.
+outcome: A full-featured Android application with offline persistence.
+stack: [Java, Android, SQLite]
+sections:
+  - title: The question
+    paragraphs:
+      - >-
+        A job search involves multiple applications, changing statuses,
+        and dates to keep track of. The goal was to make that information
+        easier to organise and review in one place.
+  - title: What we built
+    paragraphs:
+      - >-
+        Working in a team of three, I helped develop an Android application
+        for creating, editing, and monitoring job applications.
+    bullets:
+      - A timeline view for tracking application status across positions.
+      - Create, edit, and delete application entries with supporting metadata.
+      - Local SQLite persistence for offline access.
+  - title: The process
+    paragraphs:
+      - >-
+        We followed the software development lifecycle from requirements
+        analysis and design through implementation, test planning, and
+        documentation. Development used Java and IntelliJ IDEA / Android Studio.
+links:
+  - label: Source code (Georgia Tech)
+    href: https://github.gatech.edu/gt-omscs-se-2023fall/6300Fall23Team159
