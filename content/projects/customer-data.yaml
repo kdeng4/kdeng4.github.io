@@ -1,50 +1,79 @@
-title: Customer data for better marketing
-shortTitle: Customer data for better marketing
+title: Helping customers find what they need next
+shortTitle: Customer recommendations
 category: Data engineering
-context: Anonymous commercial project
-role: Data warehouse design and ownership
+context: Commercial project
+role: Data warehouse and recommendation workflow
 featured: true
 order: 1
 summary: >-
-  I designed and owned a customer data warehouse for marketing.
-  My work covered data pipelines, customer matching, audience groups,
-  and automated data quality checks.
+  I built a customer data warehouse and recommendation workflow for marketing.
+  It used purchase history, browsing activity, and repeat buying patterns
+  to rank what each customer might need next.
 outcome: >-
-  The work connected more customer activity, improved advertising returns
-  through customer grouping, and automated data quality checks.
-stack: [Data pipelines, Customer matching, Customer groups, Statistical analysis, AI quality checks]
+  The workflow turned purchase and browsing history into ranked product recommendations,
+  with duplicate entries removed before marketing review and campaign launch.
+stack: [SQL, PySpark, Batch processing, Recommendation ranking, Repeat purchase analysis, Deduplication]
 sections:
-  - title: The task
+  - title: The recommendation problem
     paragraphs:
       - >-
-        Customer activity was spread across online and store transactions.
-        The task was to connect those records and make them useful for
-        customer relationship management, or CRM.
-  - title: Building the warehouse
+        The task was to decide which products to recommend and when.
+        I built a workflow for customer relationship management, or CRM,
+        that combined what a customer had bought, what they were browsing,
+        and when they might need to buy from a category again.
+  - title: Start with clear rules
     paragraphs:
       - >-
-        I built the data pipelines that supplied the warehouse.
-        It supported customer analysis, audience selection, and marketing decisions.
-  - title: Connecting customer activity
+        I started with rules that captured known business logic. This gave the
+        first version predictable results and made it quick to review.
+        The team could check the output, give feedback, and refine the logic
+        in short cycles.
+  - title: Connect purchases through customer tokens
     paragraphs:
       - >-
-        I linked online and store transactions so more customer activity
-        could be identified and used in analysis.
-  - title: Finding useful customer groups
+        I linked purchase records from different payment cards to an encrypted
+        customer token. That token tied the records together so the workflow
+        could use a combined purchase history. Recommendations were calculated
+        for each customer token.
+  - title: Prepare in SQL, process in PySpark
     paragraphs:
       - >-
-        I used machine learning to group customers with similar patterns.
-        This work improved advertising returns by supporting customer targeting.
-      - >-
-        I also studied customer data with statistical models, trend analysis,
-        and A/B tests.
-  - title: Checking data quality
+        SQL handled the initial data preparation, including removing duplicate
+        transaction records. I then used PySpark for model building and batch
+        runs, so the heavier calculations could run in parallel across the data.
+  - title: Estimate when a category is needed again
     paragraphs:
       - >-
-        I built an AI agent to automate data quality checks.
+        I studied repeat purchases across groups of related products.
+        A customer can switch between items that serve the same need, so
+        the analysis worked at the category level.
+      - >-
+        These patterns gave a rough estimate of the time between purchases
+        in each category. I compared that estimate with each customer's
+        purchase history to find categories they might need again soon.
+  - title: Combine interest and timing, then rank
+    paragraphs:
+      - >-
+        Recent purchases and the order of browsing activity helped identify
+        relevant categories. I combined those signals with estimated repeat
+        purchase timing to rank product recommendations.
+      - >-
+        Ranking ran in two passes. A quick first pass narrowed the candidate
+        list. A more detailed second pass ordered the remaining recommendations
+        for each customer token. This focused the detailed ranking work on
+        a smaller set of candidates.
+  - title: Remove repeats before campaign review
+    paragraphs:
+      - >-
+        I checked each customer's recommendation list for repeated products,
+        removed the duplicates, and ranked the remaining products again.
+      - >-
+        The recommendations then went to marketing for review before the
+        campaign was deployed.
   - title: About this case study
     paragraphs:
       - >-
-        This is a general account of the work. Company names, dates,
-        figures, and internal systems are omitted.
+        This case study describes the technical approach. Company names,
+        dates, customer data, internal identifiers, and business figures
+        are omitted.
 links: []
