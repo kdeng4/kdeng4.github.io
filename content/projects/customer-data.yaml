@@ -1,5 +1,5 @@
-title: Helping customers find what they need next
-shortTitle: Customer recommendations
+title: Recommending products to grow sales
+shortTitle: Product recommendations
 category: Data engineering
 year: "2025"
 period: "2025"
@@ -8,16 +8,17 @@ role: Data warehouse and recommendation workflow
 featured: true
 order: 1
 summary: >-
-  I built a customer data warehouse and recommendation workflow to help marketing
-  suggest useful products at the right time. It combined what customers had bought,
-  what they were browsing, and when they might need to buy again.
+  The goal was to grow sales through relevant product recommendations, while
+  helping customers find what they needed. I built a customer data warehouse
+  and recommendation workflow that combined purchase history, browsing activity,
+  and estimated repeat purchase timing.
 outcome: >-
   Marketing received product lists based on purchase history, browsing activity,
   and estimated repeat purchase timing. Duplicate products were removed and the
   remaining recommendations ranked again before campaign review.
 stack: [SQL, PySpark, Batch processing, Recommendation ranking, Repeat purchase analysis, Deduplication]
 sections:
-  - title: Estimate what a customer may need next
+  - title: Find opportunities for repeat purchases
     paragraphs:
       - >-
         I studied repeat purchases at the category level, grouping related
@@ -26,7 +27,7 @@ sections:
         These patterns gave a rough estimate of the time between purchases
         in each category. I compared that estimate with each customer's
         purchase history to find categories they might need again soon.
-  - title: Turn that need into useful product choices
+  - title: Rank products by relevance and timing
     paragraphs:
       - >-
         Recent purchases and the order of browsing activity helped identify
