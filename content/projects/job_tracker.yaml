@@ -35,4 +35,6 @@ sections:
         We followed the software development lifecycle from requirements
         analysis and design through implementation, test planning, and
         documentation. Development used Java and IntelliJ IDEA / Android Studio.
-links: []
+links:
+  - label: Source code (Georgia Tech)
+    href: https://github.gatech.edu/gt-omscs-se-2023fall/6300Fall23Team159

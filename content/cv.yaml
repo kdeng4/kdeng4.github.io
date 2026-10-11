@@ -27,7 +27,7 @@ main:
         delivering BI dashboards, predictive models, and cost-efficient infrastructure.
       highlights:
         - Designed a cloud-based data warehouse on GCP with Airflow, integrating CRM, ERP, and
-          analytics sources
+          analytics sources and improving reporting accuracy by 25 %
         - Deployed Metabase as the company-wide BI tool, reducing data-tooling licensing costs by
           ~40 %
         - Built predictive models for customer behaviour analysis (churn prediction, product
@@ -75,8 +75,7 @@ main:
         - ETL/ELT Pipelines
         - Airflow
         - Kafka
-        - GCP (BigQuery
-        - Vertex AI)
+        - GCP (BigQuery, Vertex AI)
         - Azure
         - Data Modeling
     - name: Databases & Visualization

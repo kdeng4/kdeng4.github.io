@@ -45,11 +45,18 @@ test("visitors can explore every project, find the paper, and download the resum
   await expect(page).toHaveURL(/\/projects\/$/);
   await expect(page.locator(".project-row")).toHaveCount(projectFiles.length);
   for (const file of projectFiles) {
-    const project = parse(readFileSync(`content/projects/${file}`, "utf8")) as { title: string; summary: string };
+    const project = parse(readFileSync(`content/projects/${file}`, "utf8")) as {
+      title: string;
+      summary: string;
+      links: { label: string; href: string }[];
+    };
     const path = `/projects/${file.replace(/\.yaml$/, "")}/`;
     await page.locator(`.project-link[href="${path}"]`).click();
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(project.title);
     await expect(page.locator(".page-intro .lead")).toHaveText(project.summary);
+    for (const link of project.links) {
+      await expect(page.getByRole("link", { name: link.label, exact: true })).toHaveAttribute("href", link.href);
+    }
     await page.getByRole("link", { name: "All projects", exact: true }).click();
   }
   await page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Research" }).click();
@@ -60,6 +67,18 @@ test("visitors can explore every project, find the paper, and download the resum
   const resume = await request.get(site.resume);
   expect(resume.status()).toBe(200);
   expect((await resume.body()).subarray(0, 5).toString()).toBe("%PDF-");
+});
+
+test("the CV retains established results and project source links", async ({ page }) => {
+  await page.goto("/cv/");
+  await expect(page.getByText(/improving reporting accuracy by 25 %/)).toBeVisible();
+  await expect(page.getByText("GCP (BigQuery, Vertex AI)", { exact: false })).toBeVisible();
+  for (const href of [
+    "https://github.gatech.edu/kdeng49/kbai_2024summer_project.git",
+    "https://github.gatech.edu/gt-omscs-se-2023fall/6300Fall23Team159",
+  ]) {
+    await expect(page.locator(`.cv-section a[href="${href}"]`)).toHaveText("Source code (Georgia Tech)");
+  }
 });
 
 test("all internal links and fragment destinations resolve", async ({ page, request }) => {

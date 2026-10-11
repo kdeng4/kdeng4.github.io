@@ -37,4 +37,6 @@ sections:
         explored how structured representations and reasoning strategies
         can solve visual problems without treating them solely as
         classification tasks.
-links: []
+links:
+  - label: Source code (Georgia Tech)
+    href: https://github.gatech.edu/kdeng49/kbai_2024summer_project.git

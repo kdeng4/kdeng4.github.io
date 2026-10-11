@@ -269,9 +269,10 @@
     text-decoration: none;
     font-weight: 550;
     letter-spacing: -0.025em;
-    white-space: nowrap;
   }
   .brand-mark {
+    flex-shrink: 0;
+    white-space: nowrap;
     font-size: 1.9rem;
     font-weight: 650;
     line-height: 1;
