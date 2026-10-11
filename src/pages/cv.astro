@@ -5,18 +5,17 @@ import { getSite, getCV, getProjects, getPublications } from "../lib/content";
 const [site, cv, projects, publications] = await Promise.all([getSite(), getCV(), getProjects(), getPublications()]);
 ---
 
-<BaseLayout title="CV" description={`${site.fullName} — experience, education, and skills.`}>
+<BaseLayout
+  title="Resume"
+  description={`${site.fullName} — ${site.role} at ${site.employer}. Experience, education, and skills.`}
+>
   <div class="container interior-page cv-page">
     <header class="page-intro">
-      <p class="eyebrow">Curriculum vitae</p>
+      <p class="eyebrow">Resume</p>
       <h1>{site.fullName}</h1>
       <p class="lead">
-        {site.role} · {site.location}
+        {site.role} at {site.employer} · {site.location}
       </p>
-      <a class="button" href={site.resume}>
-        Download resume (PDF)
-        <Arrow direction="down" size={18} />
-      </a>
     </header>
     <section class="cv-section">
       <h2>Experience</h2>
@@ -29,14 +28,17 @@ const [site, cv, projects, publications] = await Promise.all([getSite(), getCV()
             </span>
           </div>
           <p class="cv-entry-meta">
-            {item.position} · {item.location}
+            {item.position}
+            {item.location && ` · ${item.location}`}
           </p>
           <p>{item.summary}</p>
-          <ul>
-            {item.highlights.map((highlight) => (
-              <li>{highlight}</li>
-            ))}
-          </ul>
+          {item.highlights.length > 0 && (
+            <ul>
+              {item.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+          )}
         </article>
       ))}
     </section>

@@ -38,6 +38,6 @@ npx playwright install chromium webkit
 npm run verify
 ```
 
-The build validates YAML and checks TypeScript. Browser tests exercise Chromium and WebKit, accessibility, 320px reflow, 200% text sizing, keyboard navigation, copy feedback, no-JavaScript use, internal links, redirects, and the real resume PDF. Run the appropriate checks for the change; do not claim WCAG conformance or real-user performance from automated results alone.
+The build validates YAML and checks TypeScript. Browser tests exercise Chromium and WebKit, accessibility, 320px reflow, 200% text sizing, keyboard navigation, copy feedback, no-JavaScript use, internal links, redirects, the online resume, and the retired PDF URL. Run the appropriate checks for the change; do not claim WCAG conformance or real-user performance from automated results alone.
 
 At the end of every completed task, provide a concise summary. If Git is available and there are completed changes to record, create a commit. Do not push or publish unless requested.

@@ -100,7 +100,7 @@ const cv = defineCollection({
       z.object({
         company: text,
         position: text,
-        location: text,
+        location: text.optional(),
         start: text,
         end: text,
         summary: text,

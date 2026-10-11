@@ -35,7 +35,7 @@ content/*.yaml + content/{projects,publications}/*.yaml
 - `src/layouts/BaseLayout.astro`: semantic shell, shared metadata, visible navigation, contact, footer, and optional production analytics.
 - `src/components/`: project list, publication, contact enhancement, and small inline SVG arrows.
 - `src/assets/portrait.jpg`: original personal photograph, optimised by Astro at build time.
-- `public/assets/pdf/resume.pdf`: existing resume at its original public URL.
+- `/cv/`: the online resume, rendered from YAML; the retired PDF URL redirects here.
 - `legacy/jekyll/`: historical source, excluded from TypeScript, formatting, Vercel uploads, and the active content/build pipeline.
 
 ## Design and interaction

@@ -31,9 +31,11 @@ Copy has been edited for clarity using the existing source. Numerical claims are
 | `/projects/Master-to-PhD-Pathway-Study/`         | Redirect to `/projects/masters-to-phd/` |
 | `/publications/`                                 | Redirect to `/research/`                |
 | `/cv/`                                           | Full CV rendered from YAML              |
-| `/assets/pdf/resume.pdf`                         | Original file and URL retained          |
+| `/assets/pdf/resume.pdf`                         | Redirect to the online resume at `/cv/` |
 
 Vercel declares permanent redirects. Astro emits equivalent HTML redirect pages for portable static hosting. The public template-only demo URLs are retired; unknown paths show a helpful 404 rather than unrelated content.
+
+The original resume PDF was retained during migration and later retired in favour of the YAML-backed resume page. Its historical copy remains in `legacy/jekyll/`; the active site no longer publishes the attachment.
 
 ## Hosting
 
@@ -43,6 +45,6 @@ GitHub Actions now runs one Node-based verification workflow. The former Pages p
 
 ## Verification scope
 
-Use the committed Playwright suite against a production build. It checks real visitor paths, the YAML-to-page boundary, every internal link, the PDF signature, legacy redirect navigation, no-JavaScript use, keyboard focus, clipboard success/failure, image dimensions, 320px reflow, and doubled text size. Axe scans the main pages in both Chromium and WebKit.
+Use the committed Playwright suite against a production build. It checks real visitor paths, the YAML-to-page boundary, every internal link, online resume navigation, legacy redirects including the retired PDF URL, no-JavaScript use, keyboard focus, clipboard success/failure, image dimensions, 320px reflow, and doubled text size. Axe scans the main pages in both Chromium and WebKit.
 
 Manual visual review should include desktop and mobile, long titles, mixed-language content, focus, and the contact area. Automated scans do not prove full WCAG 2.2 compliance. Resource sizes and lab diagnostics do not establish real-user LCP, INP, or CLS. A few first-time visitors should still try identifying Patrick's work, opening a project, and finding contact details.

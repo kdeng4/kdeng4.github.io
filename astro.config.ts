@@ -11,6 +11,7 @@ export default defineConfig({
   trailingSlash: "always",
   integrations: [sitemap()],
   redirects: {
+    "/assets/pdf/resume.pdf": "/cv/",
     "/publications/": "/research/",
     "/projects/Master to PhD Pathway Study/": "/projects/masters-to-phd/",
     "/projects/master-to-phd-pathway-study/": "/projects/masters-to-phd/",
