@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Arrow from "../components/Arrow.astro";
+import ProjectList from "../components/ProjectList.astro";
+import Publication from "../components/Publication.astro";
+import { getSite, getProjects, getPublications } from "../lib/content";
+import portrait from "../assets/portrait.jpg";
+const [site, allProjects, publications] = await Promise.all([getSite(), getProjects(), getPublications()]);
+const projects = allProjects.filter((project) => project.data.featured).slice(0, 3);
+---
+
+<BaseLayout>
+  <div class="container">
+    <section class="hero" aria-labelledby="intro-heading">
+      <div class="hero-content">
+        <p class="eyebrow">
+          <span class="green-dash" aria-hidden="true"></span>
+          {site.home.eyebrow}
+        </p>
+        <h1 id="intro-heading">
+          {site.home.heading}
+          <br />
+          <span>{site.home.accent}</span>
+        </h1>
+        <p class="hero-introduction">{site.home.introduction}</p>
+        <div class="hero-actions">
+          <a class="button" href="#projects">
+            {site.home.primaryAction}
+            <Arrow direction="down" size={18} />
+          </a>
+          <a class="text-link" href="/about/">
+            {site.home.secondaryAction}
+            <Arrow size={18} />
+          </a>
+        </div>
+        <p class="current-work">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>
+            {site.home.currentLabel} <a href={site.employerUrl}>{site.home.currentDescription}</a>
+          </span>
+        </p>
+      </div>
+      <div class="hero-portrait">
+        <Image
+          src={portrait}
+          alt="Patrick Deng"
+          width={200}
+          height={216}
+          widths={[200, 400]}
+          sizes="(max-width: 600px) 88px, 200px"
+          format="webp"
+          quality={80}
+          loading="eager"
+        />
+        <p class="portrait-note">
+          {site.home.portraitCaption.map((line, index) => (
+            <>
+              {index > 0 && <br />}
+              {line}
+            </>
+          ))}
+        </p>
+      </div>
+    </section>
+
+    <section class="home-section" id="projects" aria-labelledby="projects-heading">
+      <div class="section-heading">
+        <div>
+          <p class="section-index mono">01 / Selected work</p>
+          <h2 id="projects-heading">{site.home.projectsTitle}</h2>
+          <p>{site.home.projectsDescription}</p>
+        </div>
+        <a class="text-link section-action" href="/projects/">
+          All projects <span class="count">{allProjects.length}</span>
+          <Arrow size={18} />
+        </a>
+      </div>
+      <ProjectList projects={projects} />
+    </section>
+
+    {publications.length > 0 && (
+      <section class="home-section" id="research" aria-labelledby="research-heading">
+        <div class="section-heading">
+          <div>
+            <p class="section-index mono">02 / Looking deeper</p>
+            <h2 id="research-heading">{site.home.researchTitle}</h2>
+            <p>{site.home.researchDescription}</p>
+          </div>
+          <a class="text-link section-action" href="/research/">
+            All research
+            <Arrow size={18} />
+          </a>
+        </div>
+        {publications.slice(0, 1).map((publication) => (
+          <Publication publication={publication} />
+        ))}
+      </section>
+    )}
+
+    <section class="home-section home-about" aria-labelledby="about-heading">
+      <div>
+        <p class="section-index mono">03 / Beyond the work</p>
+        <h2 id="about-heading">{site.home.aboutTitle}</h2>
+      </div>
+      <div>
+        <p>{site.home.aboutDescription}</p>
+        <a class="text-link" href="/about/">
+          {site.home.aboutLink}
+          <Arrow size={18} />
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

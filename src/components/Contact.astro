@@ -1,0 +1,57 @@
+---
+import { getSite } from "../lib/content";
+import Arrow from "./Arrow.astro";
+const site = await getSite();
+---
+
+<div class="contact-section container" id="contact">
+  <div class="contact-copy">
+    <p class="eyebrow">{site.contact.eyebrow}</p>
+    <h2>{site.contact.title}</h2>
+    <p>{site.contact.description}</p>
+  </div>
+  <div class="contact-details">
+    <div class="email-line">
+      <a class="email-link" href={`mailto:${site.email}`}>
+        {site.email}
+        <Arrow direction="diagonal" />
+      </a>
+      <button class="copy-button" type="button" data-copy={site.email} hidden>
+        Copy email
+      </button>
+    </div>
+    <p class="copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    <ul class="social-links" aria-label={`Find ${site.name} online`}>
+      {site.social.map((link) => (
+        <li>
+          <a href={link.href}>
+            {link.label}
+            <Arrow direction="diagonal" size={14} />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>("[data-copy]");
+  if (navigator.clipboard && window.isSecureContext) {
+    for (const button of buttons) {
+      button.hidden = false;
+      button.addEventListener("click", async () => {
+        const email = button.dataset.copy;
+        const status = button.closest(".contact-details")?.querySelector<HTMLElement>(".copy-status");
+        if (!email || !status) return;
+        try {
+          await navigator.clipboard.writeText(email);
+          button.textContent = "Copied";
+          status.textContent = "Email address copied to clipboard.";
+        } catch {
+          button.textContent = "Copy email";
+          status.textContent = "Couldn't copy. Select the email address, or use the email link.";
+        }
+      });
+    }
+  }
+</script>

@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Arrow from "../components/Arrow.astro";
+import { getSite, getCV, getProjects, getPublications } from "../lib/content";
+const [site, cv, projects, publications] = await Promise.all([getSite(), getCV(), getProjects(), getPublications()]);
+---
+
+<BaseLayout title="CV" description={`${site.fullName} — experience, education, and skills.`}>
+  <div class="container interior-page cv-page">
+    <header class="page-intro">
+      <p class="eyebrow">Curriculum vitae</p>
+      <h1>{site.fullName}</h1>
+      <p class="lead">
+        {site.role} · {site.location}
+      </p>
+      <a class="button" href={site.resume}>
+        Download resume (PDF)
+        <Arrow direction="down" size={18} />
+      </a>
+    </header>
+    <section class="cv-section">
+      <h2>Experience</h2>
+      {cv.experience.map((item) => (
+        <article>
+          <div class="cv-entry-heading">
+            <h3>{item.company}</h3>
+            <span class="mono">
+              {item.start} — {item.end === "present" ? "Present" : item.end}
+            </span>
+          </div>
+          <p class="cv-entry-meta">
+            {item.position} · {item.location}
+          </p>
+          <p>{item.summary}</p>
+          <ul>
+            {item.highlights.map((highlight) => (
+              <li>{highlight}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </section>
+    <section class="cv-section">
+      <h2>Education</h2>
+      {cv.education.map((item) => (
+        <article>
+          <div class="cv-entry-heading">
+            <h3>
+              <a href={item.url}>{item.institution}</a>
+            </h3>
+            <span class="mono">
+              {item.start} — {item.end}
+            </span>
+          </div>
+          <p>
+            {item.degree} · {item.area}
+          </p>
+          <p class="cv-entry-meta">GPA: {item.score}</p>
+          {item.courses && <p class="cv-courses">Coursework: {item.courses}</p>}
+        </article>
+      ))}
+    </section>
+    <section class="cv-section">
+      <h2>Skills</h2>
+      <dl class="skills-list">
+        {cv.skills.map((skill) => (
+          <div>
+            <dt>{skill.name}</dt>
+            <dd>{skill.items.join(", ")}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+    <section class="cv-section">
+      <h2>Projects</h2>
+      {projects
+        .filter((project) => project.data.category !== "Education research")
+        .map((project) => (
+          <article>
+            <h3>
+              <a href={`/projects/${project.id}/`}>{project.data.title}</a>
+            </h3>
+            <p class="cv-entry-meta">{project.data.period}</p>
+            <p>{project.data.summary}</p>
+          </article>
+        ))}
+    </section>
+    <section class="cv-section">
+      <h2>Publications</h2>
+      {publications.map((publication) => (
+        <article>
+          <h3>
+            <a href={publication.data.href}>{publication.data.title}</a>
+          </h3>
+          <p>{publication.data.authors.join(", ")}</p>
+          <p class="cv-entry-meta">
+            {publication.data.venue} · {publication.data.year}
+          </p>
+        </article>
+      ))}
+    </section>
+    <section class="cv-section">
+      <h2>Languages & interests</h2>
+      <p>{cv.languages.map((language) => `${language.name} (${language.proficiency.toLowerCase()})`).join(" · ")}</p>
+      {cv.interests.map((interest) => (
+        <p>
+          <strong>{interest.name}:</strong> {interest.items.join(", ")}
+        </p>
+      ))}
+    </section>
+  </div>
+</BaseLayout>

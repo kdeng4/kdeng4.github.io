@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectList from "../../components/ProjectList.astro";
+import { getSite, getProjects } from "../../lib/content";
+const [site, projects] = await Promise.all([getSite(), getProjects()]);
+---
+
+<BaseLayout title="Projects" description={site.projects.description}>
+  <div class="container interior-page">
+    <header class="page-intro">
+      <p class="eyebrow">{site.projects.eyebrow}</p>
+      <h1>{site.projects.title}</h1>
+      <p class="lead">{site.projects.description}</p>
+    </header>
+    <section class="project-directory" aria-labelledby="directory-heading">
+      <h2 class="directory-heading" id="directory-heading">
+        Projects <span class="count">{projects.length}</span>
+      </h2>
+      <ProjectList projects={projects} />
+    </section>
+  </div>
+</BaseLayout>

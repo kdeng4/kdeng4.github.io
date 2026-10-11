@@ -1,0 +1,40 @@
+title: Raven's Progressive Matrices Agent
+shortTitle: Reasoning through visual puzzles
+category: Knowledge-based AI
+year: "2024"
+period: May – August 2024
+context: Knowledge-Based AI (CS 7637), Georgia Tech
+role: AI agent design & implementation
+featured: true
+order: 1
+summary: >-
+  An AI agent that solves visual analogy problems. I used semantic networks
+  and generate-and-test strategies to model transformations, reaching
+  80% accuracy on advanced problem sets.
+outcome: 80% accuracy on advanced problem sets.
+stack: [Python, Semantic networks, Visual reasoning]
+sections:
+  - title: The question
+    paragraphs:
+      - >-
+        Raven's Progressive Matrices test the ability to recognise patterns
+        and reason by analogy. Given a sequence of visual frames, the task
+        is to infer the transformation and select the missing frame.
+  - title: What I built
+    paragraphs:
+      - >-
+        I designed and implemented an agent that handles both 2×2 and 3×3
+        matrices, using knowledge-based techniques to represent and compare
+        visual relationships.
+    bullets:
+      - Represented transformations between frames with semantic networks.
+      - Applied generate-and-test strategies to choose among candidate answers.
+      - Modelled aspects of human reasoning as explicit computational steps.
+  - title: The result
+    paragraphs:
+      - >-
+        The agent achieved 80% accuracy on advanced problem sets. The work
+        explored how structured representations and reasoning strategies
+        can solve visual problems without treating them solely as
+        classification tasks.
+links: []

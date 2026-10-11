@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Arrow from "./Arrow.astro";
+interface Props {
+  publication: CollectionEntry<"publications">;
+  detailed?: boolean;
+}
+const {
+  publication: { data },
+  detailed = false,
+} = Astro.props;
+---
+
+<article class="publication">
+  <div class="publication-meta mono">
+    <span>{data.venue}</span>
+    <span>Publication · {data.year}</span>
+  </div>
+  <h3>
+    <a href={`/projects/${data.project.id}/`}>{detailed ? data.title : data.shortTitle}</a>
+  </h3>
+  <p class="publication-summary">{data.description}</p>
+  {detailed && <p class="publication-authors">{data.authors.join(", ")}</p>}
+  <div class="inline-links">
+    <a class="text-link" href={data.href}>
+      Read the paper <Arrow direction="diagonal" size={17} />
+    </a>
+    <a class="text-link" href={`/projects/${data.project.id}/`}>
+      About the study <Arrow size={17} />
+    </a>
+  </div>
+  {detailed && <p class="doi mono">DOI: {data.doi}</p>}
+</article>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Publication from "../components/Publication.astro";
+import { getSite, getPublications } from "../lib/content";
+const [site, publications] = await Promise.all([getSite(), getPublications()]);
+---
+
+<BaseLayout title="Research" description={site.research.description}>
+  <div class="container interior-page">
+    <header class="page-intro">
+      <p class="eyebrow">{site.research.eyebrow}</p>
+      <h1>{site.research.title}</h1>
+      <p class="lead">{site.research.description}</p>
+    </header>
+    <section class="research-directory" aria-labelledby="publications-heading">
+      <h2 class="directory-heading" id="publications-heading">
+        Publications <span class="count">{publications.length}</span>
+      </h2>
+      {publications.map((publication) => (
+        <Publication publication={publication} detailed />
+      ))}
+    </section>
+  </div>
+</BaseLayout>
