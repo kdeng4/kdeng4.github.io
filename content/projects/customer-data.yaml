@@ -1,6 +1,8 @@
 title: Helping customers find what they need next
 shortTitle: Customer recommendations
 category: Data engineering
+year: "2025"
+period: "2025"
 context: Commercial project
 role: Data warehouse and recommendation workflow
 featured: true
@@ -63,6 +65,6 @@ sections:
     paragraphs:
       - >-
         This case study describes the technical approach. Company names,
-        dates, customer data, internal identifiers, and business figures
+        customer data, internal identifiers, and business figures
         are omitted.
 links: []
