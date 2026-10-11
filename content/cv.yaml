@@ -2,7 +2,7 @@ main:
   experience:
     - company: Instacart
       position: AI Automation Lead II
-      start: May
+      start: "2026"
       end: present
       summary: AI automation in Commercial Strategy & Acceleration.
       highlights: []
@@ -10,7 +10,7 @@ main:
       position: Data Engineer (MLOps)
       location: Mississauga ON
       start: "2024"
-      end: May
+      end: "2026"
       summary: Owned the end-to-end Ads CRM data warehouse on GCP BigQuery, processing 70 M+ records daily
         to power customer targeting, segmentation, and marketing ROI.
       highlights:
