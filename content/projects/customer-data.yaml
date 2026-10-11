@@ -8,60 +8,66 @@ role: Data warehouse and recommendation workflow
 featured: true
 order: 1
 summary: >-
-  The goal was to grow sales through relevant product recommendations, while
-  helping customers find what they needed. I built a customer data warehouse
-  and recommendation workflow that combined purchase history, browsing activity,
-  and estimated repeat purchase timing.
+  I built a customer data warehouse and recommendation workflow to support
+  sales growth. It combined purchase history, browsing activity and estimated
+  repeat purchase timing to suggest products customers might need next.
 outcome: >-
-  Marketing received product lists based on purchase history, browsing activity,
-  and estimated repeat purchase timing. Duplicate products were removed and the
-  remaining recommendations ranked again before campaign review.
+  The workflow produced a ranked product list for each customer.
+  Marketing reviewed the recommendations before campaign deployment.
 stack: [SQL, PySpark, Batch processing, Recommendation ranking, Repeat purchase analysis, Deduplication]
 sections:
-  - title: Find opportunities for repeat purchases
+  - title: A workflow for sales campaigns
+    paragraphs:
+      - >-
+        The task was to choose products that matched a customer's interests
+        and what they might need again soon. The workflow brought purchase
+        records together, estimated repeat purchase timing, then ranked
+        products, removed repeats and ranked the remaining products again.
+        The final lists went to marketing for review.
+      - >-
+        I started development with rules for known business logic, so the team
+        could check the first version and give feedback quickly. A trained
+        ranking model can learn patterns that fixed rules miss, but needs
+        suitable training data and a way to measure recommendation quality.
+  - title: Build a usable purchase history
+    paragraphs:
+      - >-
+        The ranking needed a combined view of past purchases. I linked purchase
+        records from different payment cards to a customer token, so the
+        recommendations could draw on that customer's purchase history.
+        Recommendations were calculated for each token.
+      - >-
+        I used SQL to prepare the data for analysis. The workflow also removed
+        duplicate transaction records, so repeated records would not be treated
+        as separate purchases.
+  - title: Estimate when customers may buy again
     paragraphs:
       - >-
         I studied repeat purchases at the category level, grouping related
-        products for the analysis.
+        products to estimate the time between purchases in each category.
       - >-
-        These patterns gave a rough estimate of the time between purchases
-        in each category. I compared that estimate with each customer's
-        purchase history to find categories they might need again soon.
-  - title: Rank products by relevance and timing
+        I compared these rough estimates with each customer's purchase history
+        to find categories they might need again soon. Recent purchases and
+        the order of browsing activity helped identify which categories were
+        most relevant.
+  - title: Rank products and remove repeats
     paragraphs:
       - >-
-        Recent purchases and the order of browsing activity helped identify
-        relevant categories. I combined those signals with estimated repeat
-        purchase timing to rank product recommendations.
+        I combined purchase history, recent browsing activity and estimated
+        repeat purchase timing to rank product recommendations for each customer.
       - >-
         Ranking ran in two passes. A quick first pass narrowed the candidate
-        list. A more detailed second pass ordered the remaining recommendations
-        for each customer token. This focused the detailed ranking work on
-        a smaller set of candidates.
+        list. A more detailed second pass ordered the remaining recommendations.
+        This focused the detailed ranking work on a smaller set of candidates.
       - >-
         I checked each customer's recommendation list for repeated products,
         removed the duplicates, and ranked the remaining products again.
-  - title: Build the purchase history behind the ranking
+  - title: Why SQL and PySpark fit the work
     paragraphs:
       - >-
-        The ranking relied on a combined view of past purchases. I linked
-        purchase records from different payment cards to a customer
-        token, so recommendations could draw on that customer's purchase history.
-        Recommendations were calculated for each token.
-      - >-
-        The workflow also removed duplicate transaction records.
-  - title: Why SQL and PySpark fit this work
-    paragraphs:
-      - >-
-        Team familiarity was a key reason for choosing SQL and PySpark.
-        Data volume, runtime, and compute cost also shaped the decision.
-        I used SQL for data preparation and PySpark for model building
-        and batch runs.
-      - >-
-        SQL is a good fit for joins, filters, and grouped summaries.
-        PySpark provides Python tools for model work and can spread batch
-        calculations across machines. Grouping and sorting can also move
-        data between workers, which adds time and resource costs.
+        The team already knew SQL and PySpark. Batch size, runtime and compute
+        cost also shaped the choice. SQL handled data preparation, while
+        I used PySpark for model building and batch runs.
       - >-
         Within Spark, SQL queries and DataFrame operations share an execution
         engine. Using Python in place of SQL does not itself make a job faster.
@@ -71,11 +77,12 @@ sections:
       rows:
         - option: SQL and PySpark
           benefit: >-
-            Familiar tools for data preparation, Python model work, and
-            distributed batch processing.
+            SQL for joins, filters and grouped summaries, with familiar Python
+            tools for model work and batch calculations across machines.
           tradeoff: >-
-            Running work across machines adds overhead. Joins and sorts can
-            move data between workers, so runtime and cost still need attention.
+            Running work across machines adds overhead. Joins, grouping and
+            sorts can move data between workers, so runtime and cost still
+            need attention.
         - option: More work in SQL
           benefit: >-
             Joins, category summaries, purchase gaps, and scores based on
@@ -90,21 +97,13 @@ sections:
           tradeoff: >-
             Some operations copy the data and use more memory. Reading data in
             chunks helps when the calculation can be split into separate parts.
-  - title: Match batch runs to campaign review
+  - title: Why I used batch runs
     paragraphs:
       - >-
-        Marketing reviewed the product lists before campaign deployment,
-        so batch runs fit the handoff. Live recommendations would be more useful
-        if suggestions needed to change while a customer was browsing.
-  - title: Make the workflow easy to review
-    paragraphs:
-      - >-
-        During development, I started with rules that captured known business
-        logic. This gave the team a clear way to check the first version,
-        provide feedback, and refine the logic.
-      - >-
-        A ranking model can learn patterns that fixed rules miss. It needs
-        suitable training data and a way to measure recommendation quality.
+        These recommendations supported campaigns with a marketing review
+        step. Batch runs fit that process by producing lists for the team
+        to review before deployment. Live recommendations would be more useful
+        if suggestions needed to change during a customer's browsing session.
   - title: About this case study
     paragraphs:
       - >-
