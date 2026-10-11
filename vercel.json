@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "jekyll",
   "installCommand": "dnf install -y ImageMagick && BUNDLE_PATH=vendor/bundle bundle install && python3 -m venv .venv && .venv/bin/python -m pip install nbconvert",
-  "buildCommand": "BUNDLE_PATH=vendor/bundle PATH=\"$PWD/.venv/bin:$PATH\" JEKYLL_ENV=production bundle exec jekyll build",
+  "buildCommand": "RUBYOPT=-EUTF-8 BUNDLE_PATH=vendor/bundle PATH=\"$PWD/.venv/bin:$PATH\" JEKYLL_ENV=production bundle exec jekyll build",
   "outputDirectory": "_site",
   "trailingSlash": true
 }
