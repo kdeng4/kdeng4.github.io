@@ -82,7 +82,7 @@ const [site, cv, projects, publications] = await Promise.all([getSite(), getCV()
             <h3>
               <a href={`/projects/${project.id}/`}>{project.data.title}</a>
             </h3>
-            <p class="cv-entry-meta">{project.data.period}</p>
+            {project.data.period && <p class="cv-entry-meta">{project.data.period}</p>}
             <p>{project.data.summary}</p>
             {project.data.links.map((link) => (
               <p>

@@ -26,7 +26,12 @@ const { data } = project;
     </a>
     <header class="page-intro">
       <p class="eyebrow">
-        {data.category} <span aria-hidden="true">/</span> {data.year}
+        {data.category}
+        {data.year && (
+          <>
+            <span aria-hidden="true">/</span> {data.year}
+          </>
+        )}
       </p>
       <h1>{data.title}</h1>
       <p class="lead">{data.summary}</p>
@@ -37,13 +42,15 @@ const { data } = project;
         <dd>{data.role}</dd>
       </div>
       <div>
-        <dt>Course or research</dt>
+        <dt>Context</dt>
         <dd>{data.context}</dd>
       </div>
-      <div>
-        <dt>When</dt>
-        <dd>{data.period}</dd>
-      </div>
+      {data.period && (
+        <div>
+          <dt>When</dt>
+          <dd>{data.period}</dd>
+        </div>
+      )}
     </dl>
     <div class="project-body prose">
       {data.sections.map((section) => (

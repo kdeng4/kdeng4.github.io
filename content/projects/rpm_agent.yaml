@@ -6,7 +6,7 @@ period: May to August 2024
 context: Knowledge Based AI (CS 7637), Georgia Tech
 role: AI agent design and development
 featured: true
-order: 1
+order: 2
 summary: >-
   I built an AI agent that finds the missing image in a visual puzzle.
   It models changes between images and tests possible answers, reaching

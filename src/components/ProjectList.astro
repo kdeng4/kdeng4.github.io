@@ -17,7 +17,7 @@ const { projects } = Astro.props;
       <article>
         <div class="project-meta">
           <span>{project.data.category}</span>
-          <span>{project.data.year}</span>
+          {project.data.year && <span>{project.data.year}</span>}
         </div>
         <h3>
           <a class="project-link" href={`/projects/${project.id}/`}>

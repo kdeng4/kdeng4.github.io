@@ -1,0 +1,50 @@
+title: Customer data for better marketing
+shortTitle: Customer data for better marketing
+category: Data engineering
+context: Anonymous commercial project
+role: Data warehouse design and ownership
+featured: true
+order: 1
+summary: >-
+  I designed and owned a customer data warehouse for marketing.
+  My work covered data pipelines, customer matching, audience groups,
+  and automated data quality checks.
+outcome: >-
+  The work connected more customer activity, improved advertising returns
+  through customer grouping, and automated data quality checks.
+stack: [Data pipelines, Customer matching, Customer groups, Statistical analysis, AI quality checks]
+sections:
+  - title: The task
+    paragraphs:
+      - >-
+        Customer activity was spread across online and store transactions.
+        The task was to connect those records and make them useful for
+        customer relationship management, or CRM.
+  - title: Building the warehouse
+    paragraphs:
+      - >-
+        I built the data pipelines that supplied the warehouse.
+        It supported customer analysis, audience selection, and marketing decisions.
+  - title: Connecting customer activity
+    paragraphs:
+      - >-
+        I linked online and store transactions so more customer activity
+        could be identified and used in analysis.
+  - title: Finding useful customer groups
+    paragraphs:
+      - >-
+        I used machine learning to group customers with similar patterns.
+        This work improved advertising returns by supporting customer targeting.
+      - >-
+        I also studied customer data with statistical models, trend analysis,
+        and A/B tests.
+  - title: Checking data quality
+    paragraphs:
+      - >-
+        I built an AI agent to automate data quality checks.
+  - title: About this case study
+    paragraphs:
+      - >-
+        This is a general account of the work. Company names, dates,
+        figures, and internal systems are omitted.
+links: []

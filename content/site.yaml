@@ -42,7 +42,7 @@ main:
     currentLabel: Currently
     currentDescription: AI Automation Lead II at Instacart
     projectsTitle: Selected projects
-    projectsDescription: Visual puzzles, sign language recognition, and a job search app.
+    projectsDescription: Customer data, visual puzzles, and sign language recognition.
     researchTitle: Research
     researchDescription: How an online master's degree can lead to a PhD.
     aboutTitle: My experience
@@ -57,7 +57,7 @@ main:
     eyebrow: Projects
     title: What I've built and studied.
     description: >-
-      AI projects, an Android app, and research on computer science education.
+      Data engineering, AI projects, an Android app, and research on computer science education.
       Each project explains the problem, my role, and the result.
   research:
     eyebrow: Research

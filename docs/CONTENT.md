@@ -10,7 +10,7 @@ Update the canonical domain with `main.url`. Keep this aligned with your hosting
 
 ## Projects
 
-Create `content/projects/my-project.yaml` for `/projects/my-project/`. Start by copying an existing project and replacing its content. Required fields include:
+Create `content/projects/my-project.yaml` for `/projects/my-project/`. Start by copying an existing project and replacing its content. A complete entry looks like:
 
 ```yaml
 title: A descriptive project title
@@ -32,7 +32,7 @@ sections:
 links: []
 ```
 
-Quote `year` and other values the schema expects as strings. Set `featured: true` to include a project among homepage candidates. The first three by `order` appear on the homepage; every project appears in the full directory. Keep a published filename stable to preserve its URL, or add an explicit redirect when renaming it. Do not add source-code links unless that repository exists and is intended to be public.
+Quote `year` and other values the schema expects as strings. Both `year` and `period` are optional; omit them when a case study should not identify a timeframe. Set `featured: true` to include a project among homepage candidates. The first three by `order` appear on the homepage; every project appears in the full directory. Keep a published filename stable to preserve its URL, or add an explicit redirect when renaming it. Do not add source-code links unless that repository exists and is intended to be public.
 
 Each detail section has a `title`, one or more `paragraphs`, and optional `bullets`. Text is escaped; HTML and Markdown syntax are not rendered. This makes the current YAML model predictable. Long-form Markdown could be added as a separate collection later if requested.
 

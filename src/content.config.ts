@@ -65,8 +65,11 @@ const projects = defineCollection({
     title: text,
     shortTitle: text,
     category: text,
-    year: z.string().regex(/^\d{4}$/),
-    period: text,
+    year: z
+      .string()
+      .regex(/^\d{4}$/)
+      .optional(),
+    period: text.optional(),
     context: text,
     role: text,
     featured: z.boolean(),
