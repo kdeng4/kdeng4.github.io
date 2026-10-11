@@ -9,7 +9,8 @@ in the `patrick-db62` team. The project is connected to
 `vercel.json` defines the Jekyll build and `_site` output directory. Its install
 command installs ImageMagick, the locked Ruby gems, and nbconvert in a Python
 virtual environment for embedded notebooks. The theme and feature assets come
-from the versioned al-folio gems.
+from the versioned al-folio gems. Both install and build use `vendor/bundle`,
+including the Git-sourced `jekyll-terser` dependency.
 Keep `_config.yml` set to `url: https://pdeng.pp.ua` with an empty `baseurl`,
 because this personal site is served at the domain root.
 
