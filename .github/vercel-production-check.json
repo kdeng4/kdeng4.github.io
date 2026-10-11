@@ -1,0 +1,12 @@
+{
+  "name": "Site verification",
+  "requires": "none",
+  "targets": ["production"],
+  "blocks": "deployment-alias",
+  "source": {
+    "kind": "git-provider",
+    "provider": "github",
+    "externalCheckName": "Site verification"
+  },
+  "timeout": 1800
+}

@@ -37,14 +37,12 @@ All portfolio content is rendered to HTML at build time. Reading, navigating, do
 ## Checks
 
 ```bash
-npm run lint:prettier
-npm run build
 npx playwright install chromium webkit
-npm test
+npm run verify
 ```
 
 The browser suite checks all main pages in Chromium and WebKit, including automated accessibility scans, narrow-screen reflow, 200% text sizing, keyboard focus, contact feedback, internal links, redirect compatibility, image dimensions, and the resume download. These checks do not substitute for manual usability testing or real-user Core Web Vitals.
 
-Vercel uses `npm ci`, `npm run build`, and `dist/`. The GitHub Actions workflow runs checks; Vercel's existing Git integration handles deployment. There is no Ruby, Python, Docker, or Jekyll build step for the active site.
+Vercel uses `npm ci`, `npm run build`, and `dist/`. Its Git integration builds the site, and a production Deployment Check requires the GitHub Actions **Site verification** job to pass before releasing it to the production domains. See [CI and the release gate](docs/CI.md) for the checks, local validation, and project settings. There is no Ruby, Python, Docker, or Jekyll build step for the active site.
 
 See [architecture](docs/ARCHITECTURE.md), [content editing](docs/CONTENT.md), and [migration notes](docs/MIGRATION.md). The original al-folio source and its license attribution are preserved under [legacy/jekyll](legacy/jekyll/); the root license is retained.

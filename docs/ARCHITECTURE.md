@@ -52,4 +52,4 @@ Image width and height reserve layout space. Astro generates local WebP variants
 
 Use Node 24 (`.nvmrc`), `npm ci`, and `npm run dev`. `npm run build` runs type/content checks before prerendering. `npm run preview` serves the built output; if the Astro CLI runs it in the background, use `npx astro preview stop` to stop it.
 
-The root `vercel.json` selects Astro, builds with npm, and serves `dist/`. GitHub Actions runs formatting, the build, and browser checks with read-only repository permissions. It does not publish or run the archived Ruby workflows. Keep tests and lockfile updates in the same commit as their implementation.
+The root `vercel.json` selects Astro, builds with npm, and serves `dist/`. GitHub Actions runs `npm run verify` for formatting, the build, and browser checks with read-only repository permissions. Vercel requires the resulting check on the deployed commit before releasing production domains; see [CI and the production release gate](CI.md) for the project setting. GitHub Actions does not publish or run the archived Ruby workflows. Keep tests and lockfile updates in the same commit as their implementation.
