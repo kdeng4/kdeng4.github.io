@@ -34,7 +34,20 @@ links: []
 
 Quote `year` and other values the schema expects as strings. Both `year` and `period` are optional; omit them when a case study should not identify a timeframe. Set `featured: true` to include a project among homepage candidates. The first three by `order` appear on the homepage; every project appears in the full directory. Keep a published filename stable to preserve its URL, or add an explicit redirect when renaming it. Do not add source-code links unless that repository exists and is intended to be public.
 
-Each detail section has a `title`, one or more `paragraphs`, and optional `bullets`. Text is escaped; HTML and Markdown syntax are not rendered. This makes the current YAML model predictable. Long-form Markdown could be added as a separate collection later if requested.
+Each detail section has a `title`, one or more `paragraphs`, and optional `bullets`. A section can also include a `comparison` table after its paragraphs, with a caption and one or more rows:
+
+```yaml
+comparison:
+  caption: How these approaches compare.
+  rows:
+    - option: An approach
+      benefit: Where it helps.
+      tradeoff: What it costs or makes harder.
+```
+
+The table uses the column headings Approach, Strength, and Tradeoff, with stacked rows on small screens. Text is escaped; HTML and Markdown syntax are not rendered. This makes the current YAML model predictable. Long-form Markdown could be added as a separate collection later if requested.
+
+Use the optional project-level `references` list for technical sources. It has the same `label` and `href` fields as `links`, but appears only under Technical references on the project page. Keep project and source-code links in `links`; those also appear on the CV.
 
 ## Research
 

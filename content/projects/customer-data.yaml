@@ -49,10 +49,53 @@ sections:
         token, so recommendations could draw on that customer's purchase history.
         Recommendations were calculated for each token.
       - >-
-        SQL handled the initial data preparation. The workflow also removed
-        duplicate transaction records. I used PySpark for model building and
-        batch runs, so the heavier calculations could run in parallel across
-        the data.
+        The workflow also removed duplicate transaction records.
+  - title: Why SQL and PySpark fit this work
+    paragraphs:
+      - >-
+        Team familiarity was a key reason for choosing SQL and PySpark.
+        Data volume, runtime, and compute cost also shaped the decision.
+        I used SQL for data preparation and PySpark for model building
+        and batch runs.
+      - >-
+        SQL is a good fit for joins, filters, and grouped summaries.
+        PySpark provides Python tools for model work and can spread batch
+        calculations across machines. Grouping and sorting can also move
+        data between workers, which adds time and resource costs.
+      - >-
+        Within Spark, SQL queries and DataFrame operations share an execution
+        engine. Using Python in place of SQL does not itself make a job faster.
+        The workload and how it runs matter more than the choice of syntax.
+    comparison:
+      caption: Options for the batch workflow
+      rows:
+        - option: SQL and PySpark
+          benefit: >-
+            Familiar tools for data preparation, Python model work, and
+            distributed batch processing.
+          tradeoff: >-
+            Running work across machines adds overhead. Joins and sorts can
+            move data between workers, so runtime and cost still need attention.
+        - option: More work in SQL
+          benefit: >-
+            Joins, category summaries, purchase gaps, and scores based on
+            rules can stay in the database.
+          tradeoff: >-
+            The fit depends on the platform's modelling tools and how easy
+            the full workflow is to maintain in SQL.
+        - option: pandas on one machine
+          benefit: >-
+            A simpler setup for exploration and jobs that fit comfortably
+            in one machine's memory.
+          tradeoff: >-
+            Some operations copy the data and use more memory. Reading data in
+            chunks helps when the calculation can be split into separate parts.
+  - title: Match batch runs to campaign review
+    paragraphs:
+      - >-
+        Marketing reviewed the product lists before campaign deployment,
+        so batch runs fit the handoff. Live recommendations would be more useful
+        if suggestions needed to change while a customer was browsing.
   - title: Make the workflow easy to review
     paragraphs:
       - >-
@@ -60,8 +103,8 @@ sections:
         logic. This gave the team a clear way to check the first version,
         provide feedback, and refine the logic.
       - >-
-        The final product lists went to marketing for review before campaign
-        deployment.
+        A ranking model can learn patterns that fixed rules miss. It needs
+        suitable training data and a way to measure recommendation quality.
   - title: About this case study
     paragraphs:
       - >-
@@ -69,3 +112,16 @@ sections:
         customer data, internal identifiers, and business figures
         are omitted.
 links: []
+references:
+  - label: Spark SQL and DataFrame execution
+    href: https://spark.apache.org/docs/3.5.5/sql-programming-guide.html
+  - label: Spark shuffle costs
+    href: https://spark.apache.org/docs/3.5.5/rdd-programming-guide.html#shuffle-operations
+  - label: SQL window functions
+    href: https://spark.apache.org/docs/3.5.5/sql-ref-syntax-qry-select-window.html
+  - label: pandas and larger datasets
+    href: https://pandas.pydata.org/pandas-docs/version/2.2.3/user_guide/scale.html
+  - label: Batch recommendation workflows
+    href: https://github.com/awsdocs/amazon-personalize-developer-guide/blob/master/doc_source/recommendations-batch.md
+  - label: Training and evaluating a ranking model
+    href: https://github.com/tensorflow/recommenders/blob/v0.7.3/docs/examples/basic_ranking.ipynb

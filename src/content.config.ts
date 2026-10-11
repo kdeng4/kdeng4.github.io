@@ -10,6 +10,12 @@ const link = z.object({
 const section = z.object({
   title: text,
   paragraphs: z.array(text).min(1),
+  comparison: z
+    .object({
+      caption: text,
+      rows: z.array(z.object({ option: text, benefit: text, tradeoff: text })).min(1),
+    })
+    .optional(),
   bullets: z.array(text).optional(),
 });
 
@@ -79,6 +85,7 @@ const projects = defineCollection({
     stack: z.array(text).min(1),
     sections: z.array(section).min(1),
     links: z.array(link),
+    references: z.array(link).default([]),
   }),
 });
 
