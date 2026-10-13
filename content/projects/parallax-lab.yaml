@@ -1,0 +1,194 @@
+title: "Parallax Lab: comparing trading models and strategies"
+shortTitle: Parallax Lab
+category: Research software
+year: "2026"
+period: "2026"
+context: Personal project
+role: System design and full-stack development
+featured: false
+order: 6
+summary: >-
+  I built a paper-trading workbench to compare models and strategies under
+  the same market conditions. It keeps separate simulated accounts, records
+  decisions and trades, and provides a public dashboard for published results.
+outcome: >-
+  A deployed research workbench with historical replays, scheduled paper
+  studies and a public dashboard. The dashboard is live; no performance
+  results have been published yet.
+stack:
+  - Next.js
+  - React
+  - TypeScript
+  - Python
+  - FastAPI and Pydantic
+  - Neon PostgreSQL
+  - SQLite
+  - Cloudflare Workers and KV
+  - Vercel
+  - OpenAI Responses API
+sections:
+  - title: Make the comparison worth reading
+    paragraphs:
+      - >-
+        A return chart says little about a model if every run uses different
+        prices, starting funds or trading costs. Parallax Lab keeps those
+        conditions consistent so I can examine what changes when I replace
+        a model or adjust a strategy.
+      - >-
+        The model decides how much to invest. The strategy sets rules such as
+        how far back to look, how much of the account can be invested and when
+        a change is large enough to trade. Historical experiments vary one
+        side at a time: compare models with one strategy, or compare strategies
+        with one model. Each participant gets its own paper account.
+  - title: Two ways to run an experiment
+    paragraphs:
+      - >-
+        Historical replays use one frozen set of daily prices for every
+        participant. The engine records a decision after a day's close and
+        can execute it only at the next trading day's open. It charges fees and
+        slippage, checks cash and exposure limits, and leaves the final
+        decision unfilled if there is no following price. This prevents the
+        simulator from buying at a price that came before the decision.
+      - >-
+        Forward studies start from the current server time and follow a
+        fixed set of stocks or ETFs during scheduled market windows. Every
+        model and strategy pair receives the same snapshot of quotes, news
+        and events, alongside its own account. Models choose allocations and
+        an execution delay; simulated trades require fresh quotes after the
+        decisions are complete. A missed window is not filled later at an
+        old price. If one participant fails to produce a valid decision,
+        the group skips trading for that window.
+      - >-
+        Local momentum, mean-reversion and buy-and-hold algorithms provide
+        reference runs alongside optional OpenAI models. The local controls
+        use price history; they do not interpret news. Cloud calls use shared
+        quotas, and historical comparisons give participants the same
+        decision checkpoints. That keeps API cost bounded and makes the
+        opportunity to act comparable.
+  - title: Keep the record behind each result
+    paragraphs:
+      - >-
+        Each historical experiment saves its data fingerprint, strategy
+        version, cost assumptions, account history and ordered decision
+        record. Strategies are readable Markdown files with validated
+        configuration. A JSON export lets me inspect those inputs and
+        settings alongside the recorded decisions.
+      - >-
+        The private workspace shows returns, drawdown, trades and account
+        values. Forward accounts also track verified stock splits and
+        dividend receivables. A dividend becomes spendable cash only when
+        its payment date is verified. Pausing a study preserves its account;
+        it does not reset the starting capital.
+      - >-
+        Hosted records live in PostgreSQL. A completed replay and its audit
+        events are committed together, and database rules prevent later
+        edits to those research records. Forward studies use database leases
+        to prevent two workers from processing the same study at once.
+  - title: Why this stack fits
+    paragraphs:
+      - >-
+        Next.js handles the interface, owner sign-in and server-side API
+        proxy. Python handles market inputs, account calculations and
+        experiments behind a FastAPI service. Vercel hosts both services,
+        Neon stores the research records, and a small Cloudflare Worker
+        triggers scheduled work. Provider credentials stay on the server.
+      - >-
+        These choices come with costs. There are two application languages
+        and a separate scheduler to deploy. The benefit is a clear boundary
+        between the web interface, the financial calculations and the work
+        that must continue after the browser closes.
+    comparison:
+      caption: Technology choices and the alternatives they address
+      rows:
+        - option: Next.js and TypeScript
+          benefit: >-
+            React supports the interactive research screens, while server
+            routes handle sessions and proxy private API requests.
+          tradeoff: >-
+            A static Astro site is simpler for a published report. Astro
+            could also host an interactive app, but would still need client
+            components and authenticated server endpoints for this workspace.
+        - option: FastAPI and Pydantic
+          benefit: >-
+            Python keeps the replay engine and account tests together.
+            Typed request models validate experiment settings and generate
+            an API schema.
+          tradeoff: >-
+            Flask offers a smaller starting point, with validation and API
+            documentation added separately. Either Python option means
+            maintaining a service alongside the TypeScript frontend.
+        - option: Neon PostgreSQL
+          benefit: >-
+            Shared transactions, record constraints and study leases support
+            separate API and scheduler invocations. Preview branches keep
+            test changes away from production research.
+          tradeoff: >-
+            SQLite is easier for local development and is supported there.
+            Hosted workers need shared storage, adding connection management,
+            migrations and a remote database dependency.
+        - option: Cloudflare Workers and KV
+          benefit: >-
+            A minute-based trigger checks cached study windows and calls
+            the backend when work is due. The browser can stay closed.
+          tradeoff: >-
+            Vercel Hobby cron runs at most once daily, which does not fit
+            these windows. A paid Vercel plan could keep scheduling on one
+            platform; the Worker adds a service and schedule cache updates.
+        - option: Local controls and optional OpenAI models
+          benefit: >-
+            Simple algorithms establish reference behaviour. Language
+            models can also use the shared news and event context, with
+            decisions checked against account and strategy limits.
+          tradeoff: >-
+            A local-only system is cheaper and easier to reproduce. Cloud
+            models add latency, usage cost and variable responses. Matching
+            their inputs does not guarantee identical decisions on a rerun.
+  - title: What visitors can see
+    paragraphs:
+      - >-
+        The public dashboard is open without signing in. It lists the agents
+        and has views for published percentage returns and paper-trade
+        activity. Eligible charts start at 0% and include an SPY benchmark,
+        an ETF tracking the S&P 500. Agent returns include trading costs;
+        the benchmark is shown before costs.
+      - >-
+        The owner workspace holds experiment settings, source data and
+        detailed decisions behind GitHub sign-in through Neon Auth. The
+        public view exposes only the approved result fields, not raw prices,
+        news articles, account amounts or private settings.
+      - >-
+        At publication, the dashboard has no published performance curves
+        or trading activity. The configured market-data access does not yet
+        permit the storage and publication needed for these studies.
+        Results appear only after an eligible study records them; the site
+        does not fill the gap with sample returns. The live dashboard and
+        source code are linked below.
+  - title: What the experiments can tell me
+    paragraphs:
+      - >-
+        The workbench makes decisions, assumptions and account changes
+        inspectable. Paper fills still simplify real execution: they do not
+        model exchange queues, market impact or a broker's guarantees.
+        There is no live broker connection.
+      - >-
+        Historical tests of pretrained language models have another limit:
+        a model may already know events that happened after the test date.
+        Restricting the supplied price history cannot remove that knowledge.
+        Forward studies let me observe new decisions as market data arrives,
+        while keeping the same record of inputs, costs and outcomes.
+links:
+  - label: Open the live dashboard
+    href: https://parallax.pdeng.pp.ua/
+  - label: Source code on GitHub
+    href: https://github.com/kdeng4/parallax-lab
+references:
+  - label: Parallax Lab architecture and replay assumptions
+    href: https://github.com/kdeng4/parallax-lab/blob/main/docs/architecture.md
+  - label: Forward studies, accounting and publication rules
+    href: https://github.com/kdeng4/parallax-lab/blob/main/docs/ongoing-studies.md
+  - label: FastAPI validation and API documentation
+    href: https://fastapi.tiangolo.com/features/
+  - label: Cloudflare scheduled Workers
+    href: https://developers.cloudflare.com/workers/configuration/cron-triggers/
+  - label: Vercel cron limits by plan
+    href: https://vercel.com/docs/cron-jobs/usage-and-pricing
