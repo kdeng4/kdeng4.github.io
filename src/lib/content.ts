@@ -14,7 +14,10 @@ export async function getCV() {
 
 export async function getProjects() {
   const entries = await getCollection("projects");
-  return entries.sort((a, b) => a.data.order - b.data.order || a.id.localeCompare(b.id));
+  return entries.sort(
+    (a, b) =>
+      Number(b.data.year ?? 0) - Number(a.data.year ?? 0) || a.data.order - b.data.order || a.id.localeCompare(b.id)
+  );
 }
 
 export async function getPublications() {

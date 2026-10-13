@@ -1,0 +1,194 @@
+title: "Reciprocity Lab: exploring cooperation and competition"
+shortTitle: Reciprocity Lab
+category: Simulation and game theory
+year: "2026"
+period: "2026"
+context: Personal project
+role: Simulation design and full-stack development
+featured: false
+order: 7
+summary: >-
+  I built an interactive simulation to study how cooperation changes when
+  agents remember past encounters, compete for resources and move between
+  populations. The lab lets me change the rules, replay each round and trace
+  population outcomes back to individual decisions.
+outcome: >-
+  A working simulation lab with controlled comparisons, cloud and browser
+  execution, individual encounter histories and exportable experiment
+  records. The hosted workspace requires approved Vercel access.
+stack:
+  - Python
+  - React and TypeScript
+  - Vite
+  - FastAPI
+  - Pyodide and Web Workers
+  - Neon PostgreSQL
+  - SQLite and IndexedDB
+  - Vercel Queues
+  - Canvas and SVG
+  - YAML strategies
+sections:
+  - title: Understand what makes cooperation last
+    paragraphs:
+      - >-
+        An agent can gain points by taking advantage of a cooperative
+        opponent. Whether that advantage lasts depends on what happens next:
+        will the two meet again, will the opponent remember, and can either
+        move to another population? I built Reciprocity Lab to explore those
+        mechanisms separately and watch their effects over time.
+      - >-
+        Each dot represents an agent following a strategy, such as always
+        cooperating, always defecting, or Tit for Tat. Tit for Tat starts by
+        cooperating, then repeats the current opponent's last action when
+        they meet again. It remembers opponents separately. Random pairing
+        in a large population can make those repeat encounters rare.
+  - title: Make the rules visible
+    paragraphs:
+      - >-
+        In the current model, two agents meet over a pool of points. With
+        a two-point pool, mutual cooperation gives each agent one point.
+        If only one defects, the defector takes both points. Mutual
+        defection gives neither agent anything. Agents are paired within
+        their current population, and their scores accumulate across rounds.
+      - >-
+        The setup controls strategy counts, rewards, births, score-based
+        elimination, aging, capacity and migration. Migration can respond
+        to an agent's score rank, elimination pressure and overcrowding.
+        Destination rules can restrict entry using observed scores and
+        cooperation history. These choices change who survives and who
+        meets whom, so they belong in the experiment record.
+  - title: One comparison, one changed rule
+    paragraphs:
+      - >-
+        Two saved setup presets isolate the effect of reciprocity. Both use
+        20 agents, 80 rounds, seed 42 and a fixed two-point reward pool.
+        Five agents always defect. The other 15 either always cooperate
+        or use Tit for Tat. Births, elimination, migration and aging are
+        switched off; only the cooperative strategy changes.
+      - >-
+        In the documented seed-42 runs, the always-defect agents' mean score
+        fell from 120.80 against unconditional cooperators to 29.60 against
+        Tit for Tat. The cooperative agents' mean stayed at 59.87. Reciprocity
+        cut off defectors' later gains without increasing the reciprocal
+        agents' own mean score in this comparison.
+      - >-
+        Overall cooperation also fell, from 75% to 60.75%, because agents
+        stopped cooperating with known defectors. That distinction matters:
+        the highest individual score, the cooperation rate and the points
+        produced by the whole population answer different questions. These
+        are results from a specified simulation, not findings about how
+        people behave.
+  - title: Follow the result back to an encounter
+    paragraphs:
+      - >-
+        The canvas shows the populations as dots. Selecting one opens its
+        scores, strategy, opponents, lineage and moves between populations.
+        The timeline replays saved rounds; an agent's profile shows only
+        information available at the selected round. Later encounters do
+        not leak into an earlier view.
+      - >-
+        Filters narrow the view by population, strategy, generation and
+        whether agents have been eliminated. Score histograms describe
+        the selected snapshot. The cooperation chart uses all recorded
+        actions up to that round, including actions by agents that later
+        disappeared. Recorded migration attempts also distinguish a
+        refused entry from an actual move.
+      - >-
+        Each experiment can save a purpose, hypothesis, condition label and
+        notes alongside its seed, model fingerprint, configuration and
+        strategy revisions. A ZIP export retains the record and observations.
+        Repeating a run requires those inputs and any manual interventions;
+        a seed alone is not enough after code or strategies change.
+  - title: Run the same model in two places
+    paragraphs:
+      - >-
+        Cloud runs advance through a managed queue. Each completed round
+        saves its observations, a resumable model checkpoint and the next
+        pending delivery in one database transaction. A repeated queue
+        delivery checks the saved sequence before doing any work, so it
+        cannot play the same round twice. The run can continue after the
+        browser closes.
+      - >-
+        The computer option runs the same Python model through Pyodide in
+        a browser worker. It keeps computation off the interface thread,
+        saves completed frames in IndexedDB and uploads observations to
+        the shared store. This uses the visitor's CPU and memory and needs
+        the originating tab to stay open. Saved frames remain available
+        for replay and export if execution stops.
+  - title: Why this stack fits
+    paragraphs:
+      - >-
+        Python owns the simulation rules and calculations. React handles
+        setup and inspection, with Canvas for the arena and SVG for charts.
+        FastAPI serves the built interface and its data endpoints. Local
+        server runs use SQLite; hosted runs use Neon PostgreSQL and Vercel
+        Queues. The browser option reuses the model instead of maintaining
+        a second set of simulation rules.
+    comparison:
+      caption: Choices behind the simulation and research interface
+      rows:
+        - option: Python with FastAPI
+          benefit: >-
+            Keeps the model, command-line experiments and API in one
+            language. The engine can be tested without starting the web UI.
+          tradeoff: >-
+            A TypeScript-only app could share a language with the frontend,
+            but would require porting the existing model and checking that
+            its random choices, arithmetic and saved runs still agree.
+        - option: React, TypeScript and Vite
+          benefit: >-
+            Supports the experiment forms, filters and replay controls as
+            one interactive app, served by the existing Python backend.
+          tradeoff: >-
+            Next.js would add server rendering and server routes. Those
+            features are useful for other sites; this protected workspace
+            already has its API and needs its interactive state in the browser.
+        - option: Pyodide in a Web Worker
+          benefit: >-
+            Runs the shared Python sources on the visitor's computer while
+            leaving the interface thread free to handle input and rendering.
+          tradeoff: >-
+            A JavaScript rewrite could avoid loading a Python runtime, but
+            would create another model implementation to maintain. Pyodide
+            adds download, startup and browser-memory costs.
+        - option: PostgreSQL and queued cloud rounds
+          benefit: >-
+            Transactions and checkpoints let separate worker invocations
+            continue a run while preserving its observations and controls.
+          tradeoff: >-
+            An in-process loop is simpler for a local server. Hosted queues
+            add delivery delays, retry handling and storage overhead, so
+            cloud timing is approximate rather than an animation clock.
+        - option: Versioned YAML strategies
+          benefit: >-
+            Ordered rules let the user express conditions and actions without
+            editing the engine. Each run pins the strategy revision it used.
+          tradeoff: >-
+            Python plugins support more complex logic. YAML is deliberately
+            limited to validated observations and actions, so it cannot
+            express every possible strategy or execute arbitrary code.
+  - title: Explore the lab
+    paragraphs:
+      - >-
+        The hosted lab is linked below and requires approved Vercel access.
+        Its source repository is private. Inside the workspace, the two
+        comparison presets provide a starting point for running the same
+        controlled conditions and inspecting the resulting histories.
+      - >-
+        The current charts describe individual simulations. Broader
+        conclusions need repeated seeds and sensitivity checks across
+        explicit conditions. The payoff, pairing and selection rules are
+        assumptions of this model; the lab makes them easier to inspect
+        and change.
+links:
+  - label: Open the lab (Vercel access required)
+    href: https://reciprocity.pdeng.pp.ua/
+references:
+  - label: Pyodide in a Web Worker
+    href: https://pyodide.org/en/stable/usage/webworker.html
+  - label: Vercel Queues and delivery guarantees
+    href: https://vercel.com/docs/queues
+  - label: Browser storage with IndexedDB
+    href: https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+  - label: FastAPI features and validation
+    href: https://fastapi.tiangolo.com/features/

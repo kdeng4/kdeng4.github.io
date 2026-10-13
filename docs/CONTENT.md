@@ -32,7 +32,9 @@ sections:
 links: []
 ```
 
-Quote `year` and other values the schema expects as strings. Both `year` and `period` are optional; omit them when a case study should not identify a timeframe. Set `featured: true` to include a project among homepage candidates. The first three by `order` appear on the homepage; every project appears in the full directory. Keep a published filename stable to preserve its URL, or add an explicit redirect when renaming it. Do not add source-code links unless that repository exists and is intended to be public.
+Quote `year` and other values the schema expects as strings. Both `year` and `period` are optional; omit them when a case study should not identify a timeframe. Projects sort by `year`, newest first, then by importance within that year: a lower `order` means higher priority. Undated projects follow dated projects. Equal years and priorities use the filename for a stable order. The display-only `period` does not affect sorting.
+
+The project directory, CV, and next-project navigation share this order. Set `featured: true` to include a project among homepage candidates; the first three featured projects in this order appear on the homepage. Every project appears in the full directory. Keep a published filename stable to preserve its URL, or add an explicit redirect when renaming it. Do not add source-code links unless that repository exists and is intended to be public.
 
 Each detail section has a `title`, one or more `paragraphs`, and optional `bullets`. A section can also include a `comparison` table after its paragraphs, with a caption and one or more rows:
 
