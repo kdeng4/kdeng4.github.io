@@ -15,6 +15,13 @@ main:
   analytics:
     enabled: true
     googleId: G-ML0SG7R2BY
+    umami:
+      scriptUrl: https://patrick-umami.vercel.app/script.js
+      websiteId: 0e542f38-981e-4162-a0c3-d6c6ac7c9760
+      domains:
+        - pdeng.pp.ua
+        - www.pdeng.pp.ua
+        - pdeng.vercel.app
   navigation:
     - label: Projects
       href: /projects/

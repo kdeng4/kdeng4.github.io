@@ -11,6 +11,7 @@ const site = parse(readFileSync("content/site.yaml", "utf8")).main as {
   resume: string;
   role: string;
   employer: string;
+  analytics: { umami: { scriptUrl: string } };
 };
 const projectFiles = readdirSync("content/projects").filter((name) => name.endsWith(".yaml"));
 const projectPaths = projectFiles.map((file) => `/projects/${file.replace(/\.yaml$/, "")}/`);
@@ -18,6 +19,7 @@ const paths = ["/", "/projects/", "/research/", "/about/", "/cv/", ...projectPat
 
 test.beforeEach(async ({ page }) => {
   // Keep third-party analytics out of local, deterministic browser checks.
+  await page.route(site.analytics.umami.scriptUrl, (route) => route.fulfill({ status: 200, body: "" }));
   await page.route("https://www.googletagmanager.com/**", (route) => route.fulfill({ status: 200, body: "" }));
   await page.route("https://*.google-analytics.com/**", (route) => route.fulfill({ status: 204 }));
 });

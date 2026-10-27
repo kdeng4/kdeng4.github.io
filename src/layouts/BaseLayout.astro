@@ -49,6 +49,15 @@ const person = {
     <meta property="og:locale" content={site.language.replace("-", "_")} />
     <meta name="twitter:card" content="summary" />
     <script type="application/ld+json" set:html={JSON.stringify(person).replace(/</g, "\u003c")} />
+    {analyticsEnabled && (
+      <script
+        is:inline
+        defer
+        src={site.analytics.umami.scriptUrl}
+        data-website-id={site.analytics.umami.websiteId}
+        data-domains={site.analytics.umami.domains.join(",")}
+      ></script>
+    )}
   </head>
   <body id="top">
     <a class="skip-link" href="#main-content">

@@ -35,7 +35,15 @@ const site = defineCollection({
     employerUrl: z.url(),
     resume: text,
     searchConsoleVerification: text,
-    analytics: z.object({ enabled: z.boolean(), googleId: z.string().regex(/^G-[A-Z0-9]+$/) }),
+    analytics: z.object({
+      enabled: z.boolean(),
+      googleId: z.string().regex(/^G-[A-Z0-9]+$/),
+      umami: z.object({
+        scriptUrl: z.url(),
+        websiteId: z.uuid(),
+        domains: z.array(text).min(1),
+      }),
+    }),
     navigation: z.array(link),
     social: z.array(link),
     home: z.object({
