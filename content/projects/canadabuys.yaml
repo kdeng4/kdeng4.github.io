@@ -1,0 +1,92 @@
+title: "CanadaBuys: federal procurement opportunity radar"
+shortTitle: CanadaBuys opportunity radar
+category: Data products and decision support
+year: "2026"
+period: "2026–present"
+context: Personal project
+role: Product framing, data engineering, analysis and deployment
+featured: true
+order: 1
+summary: >-
+  I built a public data product to help Canadian AI and data consultancies
+  review federal procurement opportunities. It combines daily source updates,
+  captured revisions and interactive reports with clear links to the evidence.
+outcome: >-
+  Three public reports cover opportunity review, market context and source
+  quality. A scheduled pipeline refreshes the data daily and retains observed
+  changes. Matching quality and usefulness still need evaluation with practitioners.
+stack:
+  - Node.js
+  - PostgreSQL and SQL
+  - Neon PostgreSQL and Functions
+  - Evidence and Markdown
+  - Vercel
+  - Versioned ingestion and data quality checks
+sections:
+  - title: Start with a decision
+    paragraphs:
+      - >-
+        A small consultancy needs to decide which notices deserve a closer
+        look before committing time to a bid. The opportunity report filters
+        candidates by capability, match location and notice type. It makes
+        deadlines and procurement restrictions visible and links to the
+        original notice where the source supplies a URL.
+      - >-
+        The intended user is an initial product hypothesis. Keyword matches
+        explain why a notice appears; they do not establish eligibility,
+        commercial fit or a chance of winning. This keeps the first version
+        inspectable while leaving room to learn from actual reviewers.
+  - title: Keep the history behind the latest view
+    paragraphs:
+      - >-
+        The pipeline imports an initial historical baseline from official
+        CanadaBuys tender and award files. Daily refreshes compare record
+        hashes and preserve changed versions rather than replacing the
+        evidence with the latest API response. Repeated identical content
+        does not create another version.
+      - >-
+        Source manifests record checksums, fetch times and publication dates.
+        Validation catches malformed files, missing columns, duplicate
+        identifiers and unexpected drops in row counts. A failed source
+        refresh leaves the last successful data available. Sunday runs also
+        reconcile the previous fiscal year.
+  - title: Put analysis beside its limits
+    paragraphs:
+      - >-
+        The opportunity radar separates active candidates from source-status
+        exceptions and shows captured amendments. The market report compares
+        notice activity across complete months, identifies contracting
+        entities and lets readers inspect comparable award notices.
+      - >-
+        The third report shows source freshness, refresh history, matching
+        rules and coverage limits. Notice counts are not spending or win
+        rates. Award amounts retain their currencies and procurement
+        instruments, and tender-to-award relationships are not assumed.
+  - title: Deliver a working public product
+    paragraphs:
+      - >-
+        Evidence renders the interactive reports. A Node.js publishing
+        gateway separates public reading from authenticated editing, draft
+        previews and publication. Neon stores report content and versioned
+        data; native scheduled functions keep ingestion running after the
+        browser closes. Vercel hosts the website.
+      - >-
+        Public readers can query curated views, while raw captures and
+        internal review records stay private. Report publication checks
+        data access and validates the report against the live warehouse.
+        The next product step is to review labelled notices with intended
+        users and measure whether the tool helps them find relevant work.
+links:
+  - label: Open the opportunity radar
+    href: https://pro-evidence.vercel.app/reports/canadabuys
+  - label: Explore market context
+    href: https://pro-evidence.vercel.app/reports/canadabuys-market
+  - label: Inspect sources and method
+    href: https://pro-evidence.vercel.app/reports/canadabuys-method
+  - label: Visit Patrick's Data Lab
+    href: https://pro-evidence.vercel.app/
+references:
+  - label: Official CanadaBuys tender notice dataset
+    href: https://open.canada.ca/data/en/dataset/6abd20d4-7a1c-4b38-baa2-9525d0bb2fd2
+  - label: Official CanadaBuys award notice dataset
+    href: https://open.canada.ca/data/en/dataset/a1acb126-9ce8-40a9-b889-5da2b1dd20cb
