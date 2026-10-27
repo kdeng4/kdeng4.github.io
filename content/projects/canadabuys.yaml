@@ -39,8 +39,8 @@ sections:
   - title: Keep the history behind the latest view
     paragraphs:
       - >-
-        The pipeline imports an initial historical baseline from official
-        CanadaBuys tender and award files. Daily refreshes compare record
+        The pipeline imports federal tender and award files from FY2025–26
+        onward, together with the current open-notice feed. Daily refreshes compare record
         hashes and preserve changed versions rather than replacing the
         evidence with the latest API response. Repeated identical content
         does not create another version.
